@@ -11,6 +11,7 @@ nav:
           - Visão geral: coinsurance/apolice/index.md
           - Fluxos:
               - Emissão da Apólice (Master/Certificate): coinsurance/apolice/fluxos/emissao-apolice-master-certificate.md
+              - Recebimento do Prêmio (PREMRECEB): coinsurance/apolice/fluxos/recebimento-premio-premreceb.md
           - PREMIT: coinsurance/apolice/premit.md
           - PREMREC: coinsurance/apolice/premrec.md
           - PREMRECEB: coinsurance/apolice/premreceb.md
