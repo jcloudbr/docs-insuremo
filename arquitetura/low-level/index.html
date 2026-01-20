@@ -1,0 +1,1571 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../desafios-e-solucoes/">
+      
+      
+        <link rel="next" href="../modelo-c4/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Design de Baixo Nível - Documentação Técnica - Sistema de Coinsurance BMG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design-tecnico-de-baixo-nivel" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Documentação Técnica - Sistema de Coinsurance BMG" class="md-header__button md-logo" aria-label="Documentação Técnica - Sistema de Coinsurance BMG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação Técnica - Sistema de Coinsurance BMG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design de Baixo Nível
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentação Técnica - Sistema de Coinsurance BMG" class="md-nav__button md-logo" aria-label="Documentação Técnica - Sistema de Coinsurance BMG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação Técnica - Sistema de Coinsurance BMG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Design e Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Design e Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-geral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão Geral do Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desafios-e-solucoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desafios e Soluções
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Design de Baixo Nível
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design de Baixo Nível
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo de Requisição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracoes-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurações de Ambiente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-infraestrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de Infraestrutura
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline de Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-de-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégias de Segurança
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategia-de-backup-e-recuperacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégia de Backup e Recuperação
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-c4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo C4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Coinsurance / SUSEP (BMG)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coinsurance / SUSEP (BMG)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Apólice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Apólice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/premit.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/premrec.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMREC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/premreceb.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMRECEB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/resprem.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RESPREM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    De/Para
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            De/Para
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/depara/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sumário
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/depara/premit.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/depara/premrec.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMREC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/depara/premreceb.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMRECEB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/apolice/depara/resprem.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RESPREM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sinistro
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sinistro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/sinav.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINAV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/sinpend.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINPEND
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/sinpag.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINPAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    De/Para
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            De/Para
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/depara/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sumário
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/depara/sinav.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINAV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/depara/sinpend.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINPEND
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/sinistro/depara/sinpag.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SINPAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retornos / RO BMG
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Retornos / RO BMG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/retorno/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/retorno/premrecebc.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PREMRECEBC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coinsurance/retorno/respremc.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RESPREMC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo de Requisição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracoes-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurações de Ambiente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-infraestrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de Infraestrutura
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline de Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-de-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégias de Segurança
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategia-de-backup-e-recuperacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégia de Backup e Recuperação
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="design-tecnico-de-baixo-nivel">Design Técnico de Baixo Nível<a class="headerlink" href="#design-tecnico-de-baixo-nivel" title="Permanent link">&para;</a></h1>
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Descreve os detalhes técnicos da implementação da arquitetura. Deve ser voltado para operadores de infraestrutura, DevOps e desenvolvedores que precisam compreender o comportamento interno da solução, configurações, automações, segurança e práticas operacionais.</p>
+<p><strong>Exemplo:</strong></p>
+<p>Esta seção detalha o comportamento interno do ambiente WordPress implantado em containers ECS, incluindo fluxo de requisição, variáveis de configuração, processos de deploy, estratégias de segurança e procedimentos de backup. Ela serve como referência técnica para manutenção e evolução da solução.</p>
+<hr />
+<h2 id="fluxo-de-requisicao">Fluxo de Requisição<a class="headerlink" href="#fluxo-de-requisicao" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Descreva o caminho completo de uma requisição típica do usuário até o backend. Inclua componentes intermediários (CDN, balanceadores, serviços internos) e explique como o conteúdo é entregue.</p>
+<p><strong>Exemplo:</strong></p>
+<ol>
+<li>O usuário acessa <code>https://xpto.com.br</code>.</li>
+<li>A requisição é inspecionada pelo WAF da Cloudflare, que aplica políticas de segurança e cache.</li>
+<li>Se permitida, a requisição é encaminhada ao Application Load Balancer (ALB) da AWS.</li>
+<li>O ALB distribui o tráfego para uma task ECS em execução, onde o WordPress está rodando em um container.</li>
+<li>O WordPress acessa o banco de dados Amazon Aurora para recuperar o conteúdo e carrega arquivos do Amazon EFS.</li>
+<li>A resposta é enviada de volta ao usuário pelo mesmo caminho reverso.</li>
+</ol>
+<hr />
+<h2 id="configuracoes-de-ambiente">Configurações de Ambiente<a class="headerlink" href="#configuracoes-de-ambiente" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Liste as variáveis de ambiente, configurações de runtime, dependências externas, mapeamentos de volumes e recursos consumidos (memória, CPU etc.).</p>
+<p><strong>Exemplo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variável / Configuração</th>
+<th>Valor / Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WORDPRESS_DB_HOST</code></td>
+<td>aurora-cluster.cluster-abc.us-east-1.rds.amazonaws.com</td>
+</tr>
+<tr>
+<td><code>WORDPRESS_DB_USER</code></td>
+<td>admin</td>
+</tr>
+<tr>
+<td><code>WORDPRESS_DB_PASSWORD</code></td>
+<td>Armazenado como secret no ECS</td>
+</tr>
+<tr>
+<td><code>WORDPRESS_DB_NAME</code></td>
+<td>wp_prod</td>
+</tr>
+<tr>
+<td><code>WP_HOME</code></td>
+<td>https://portal.exemplo.gov.br</td>
+</tr>
+<tr>
+<td><code>WP_SITEURL</code></td>
+<td>https://portal.exemplo.gov.br</td>
+</tr>
+<tr>
+<td>Montagem de volume EFS</td>
+<td>Montado no container em <code>/var/www/html/wp-content</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="requisitos-de-infraestrutura">Requisitos de Infraestrutura<a class="headerlink" href="#requisitos-de-infraestrutura" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Detalhe os recursos mínimos necessários para execução da aplicação. Isso inclui CPU, memória, política de rede, sistema operacional ou imagem base, além de configurações específicas de execução. Essas informações são importantes para sizing, escalabilidade e custo.</p>
+<p><strong>Exemplo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Valor / Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>0.5 vCPU (por container ECS)</td>
+</tr>
+<tr>
+<td>Memória</td>
+<td>1 GB (por container ECS)</td>
+</tr>
+<tr>
+<td>Rede</td>
+<td>Sub-redes privadas, sem IP público</td>
+</tr>
+<tr>
+<td>Sistema Operacional</td>
+<td>Amazon Linux 2 (base da imagem Fargate)</td>
+</tr>
+<tr>
+<td>Imagem Docker</td>
+<td><code>registry.gitlab.com/exemplo/wordpress-custom:latest</code></td>
+</tr>
+<tr>
+<td>Montagem de volume (EFS)</td>
+<td><code>/var/www/html/wp-content</code></td>
+</tr>
+<tr>
+<td>Logging</td>
+<td>Logs enviados para AWS CloudWatch Logs com retenção de 30 dias</td>
+</tr>
+</tbody>
+</table>
+<p>Essas configurações foram definidas para balancear custo e desempenho, considerando o perfil de uso dos portais e a arquitetura baseada em Fargate. Em projetos com maior volume de tráfego ou processamento, os valores de CPU e memória podem ser ajustados conforme métricas reais de uso.</p>
+<h2 id="pipeline-de-deploy">Pipeline de Deploy<a class="headerlink" href="#pipeline-de-deploy" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Descreva como a aplicação é implantada: processo de build da imagem, testes, publicação e atualização do serviço. Se for gerenciado por pipeline CI/CD, documente os estágios e ferramentas utilizadas.</p>
+<p><strong>Exemplo:</strong></p>
+<ol>
+<li>Desenvolvedores versionam o código e as configurações da aplicação no GitLab.</li>
+<li>O GitLab CI é responsável por:</li>
+<li>Executar testes automatizados</li>
+<li>Construir a imagem Docker do WordPress personalizada</li>
+<li>Publicar a imagem no Amazon ECR</li>
+<li>Aplicar atualizações no ECS com <code>deploy rolling</code> controlado</li>
+<li>As configurações de infraestrutura (ALB, ECS, Aurora, EFS) são gerenciadas via Terraform, com repositório separado, seguindo práticas de GitOps.</li>
+</ol>
+<hr />
+<h2 id="estrategias-de-seguranca">Estratégias de Segurança<a class="headerlink" href="#estrategias-de-seguranca" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Explique os mecanismos de segurança adotados para proteger o ambiente, como controle de acesso, uso de VPN, autenticação, criptografia, e proteção contra ataques externos.</p>
+<p><strong>Exemplo:</strong></p>
+<ul>
+<li>A URL <code>/wp-admin</code> é protegida por uma regra personalizada de WAF na Cloudflare que bloqueia todo tráfego externo não proveniente de IPs da VPN.</li>
+<li>A autenticação no painel do WordPress é federada via EntraID (Azure AD), com autenticação multifator ativada.</li>
+<li>Containers ECS não têm IP público e comunicam-se exclusivamente em sub-redes privadas.</li>
+<li>Todos os segredos (senhas, tokens) são armazenados como <code>secrets</code> no ECS, com permissões controladas via IAM.</li>
+<li>Logs de acesso e erros são auditados via CloudWatch Logs.</li>
+</ul>
+<hr />
+<h2 id="estrategia-de-backup-e-recuperacao">Estratégia de Backup e Recuperação<a class="headerlink" href="#estrategia-de-backup-e-recuperacao" title="Permanent link">&para;</a></h2>
+<p><strong>O que deve conter:</strong></p>
+<p>Explique como backups são realizados, onde são armazenados, frequência, retenção e como ocorre a recuperação em caso de falha.</p>
+<p><strong>Exemplo:</strong></p>
+<ul>
+<li>O Amazon Aurora realiza backups automáticos com retenção de 7 dias e suporta Point-in-Time Recovery (PITR).</li>
+<li>O Amazon EFS é protegido por políticas do AWS Backup, com execução semanal e retenção de 30 dias.</li>
+<li>Restauração do banco e do EFS pode ser feita manualmente por operadores com permissão, via console AWS ou CLI.</li>
+<li>Os dados críticos são armazenados em múltiplas zonas de disponibilidade (Multi-AZ) para resiliência adicional.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
