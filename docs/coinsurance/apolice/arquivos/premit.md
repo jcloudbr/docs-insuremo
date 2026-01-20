@@ -100,14 +100,21 @@ Além do movimento e valores, o PREMIT ancora **quem é o contrato** e “qual p
 
 ### 1) Rastreabilidade (“o que aconteceu”)
 O PREMIT responde rapidamente:
+
 - **Qual evento** (TIPO_MOV) ocorreu
+
 - **Em qual contrato** (ramo/apólice/endosso/proposta)
+
 - **Em qual competência** (DT_BASE)
+
 - **Com quais totalizadores** (prêmio, IOF, comissão, custos…)
 
 Isso é usado para:
+
 - auditoria e trilha regulatória
+
 - conciliação por competência
+
 - investigação de divergências (emitido x parcelado x recebido)
 
 ---
@@ -119,7 +126,9 @@ No seu fluxo de Coinsurance, o PREMIT funciona como “pai” do PREMREC:
 - PREMREC detalha a cobrança (parcelas) e viabiliza a execução operacional
 
 **Na prática:**
+
 - o sistema ingere PREMIT e guarda `PENDING`
+
 - depois usa PREMIT como base para correlacionar e processar PREMREC
 
 ---

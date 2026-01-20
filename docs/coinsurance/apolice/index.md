@@ -33,8 +33,8 @@ desde a **emissão/endosso da apólice definitiva** até **recebimento** e **res
 - **Gatilho:** emissão inicial da apólice/certificado pelo líder.
 - **Arquivo:** `PREMIT` + `PREMREC`
 - **Regras de Negócio (visão operacional):**
-  - `PREMIT` registra o **movimento macro** (o “o que aconteceu”).
-  - `PREMREC` traz o **parcelamento** e habilita o processamento que cria a apólice definitiva.
+    - `PREMIT` registra o **movimento macro** (o “o que aconteceu”).
+    - `PREMREC` traz o **parcelamento** e habilita o processamento que cria a apólice definitiva.
   - O processamento cria/atualiza **Master Policy** e emite **Certificate Policy** (módulo Policy).
 - **Transição de Estado:** Não existente → **Emitida (Master + Certificate)**
 - **Impacto financeiro:** **(+) Emissão** (gera base para cobrança/parcelas)
@@ -71,8 +71,8 @@ desde a **emissão/endosso da apólice definitiva** até **recebimento** e **res
 - **Gatilho:** cancelamento do contrato (apólice/certificado).
 - **Arquivo:** `PREMIT` + `PREMREC`
 - **Tipos de Movimento (TIPO_MOV):**
-  - **104:** Cancelamento **com** restituição
-  - **106:** Cancelamento **sem** restituição
+    - **104:** Cancelamento **com** restituição
+    - **106:** Cancelamento **sem** restituição
 - **Regras de Negócio:**
   - Cancela a apólice/certificado e encerra o ciclo de cobrança (podendo haver restituição, conforme TIPO_MOV).
 - **Transição de Estado:** Emitida/Endossada → **Cancelada**

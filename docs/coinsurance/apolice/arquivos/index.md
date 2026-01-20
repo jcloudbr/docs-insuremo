@@ -16,4 +16,4 @@ o que representa, para que serve e como se conecta aos fluxos.
 2) Depois consulte o arquivo específico para entender:
    - significado negocial
    - campos e intenções
-   - pontos de conciliação com outros arquivos
+   - pontos de conciliação com outros arquivoss

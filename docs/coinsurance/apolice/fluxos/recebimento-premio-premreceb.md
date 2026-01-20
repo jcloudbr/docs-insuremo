@@ -20,17 +20,26 @@
 
 ### O que ele representa
 Um registro de **prêmio efetivamente recebido**, por parcela, contendo:
+
 - a **chave de negócio** (ramo, apólice, endosso, proposta, movimento)
+
 - dados de **parcela** (número, vencimento, data de recebimento)
+
 - dados de **cobrança** (boleto, nosso número, documento, agência, banco)
+
 - valores do título (valor do documento, desconto, multa, valor cobrado)
 
 ### Para que ele serve
 Negocialmente, serve para:
+
 - **dar baixa financeira** (parcela paga)
+
 - permitir **conciliação** entre:
-  - **emitido/parcelado** (PREMREC)
-  - **recebido** (PREMRECEB)
+
+    - **emitido/parcelado** (PREMREC)
+
+    - **recebido** (PREMRECEB)
+
 - acionar a camada operacional (no seu caso, **BCP**) para registrar o pagamento como **Payment Paid**.
 
 ---

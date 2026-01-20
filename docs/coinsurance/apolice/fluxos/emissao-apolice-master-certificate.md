@@ -3,7 +3,7 @@
 > **Escopo:** fluxo de **criação/atualização da Apólice Definitiva no módulo Policy** (**Master Policy + Certificate Policy**), a partir de **PREMIT (pai)** e **PREMREC (parcelas/motor)**.  
 > **Referências de código:** `CoinsurancePremitService.groovy`, `CoinsurancePremRecService.groovy`  
 > **Entidades:** `CnsPremit`, `CnsPremRec`  
-> **Links rápidos:** [PREMIT](../arquivos/premit.md) · [PREMREC](../arquivos/premrec.md) · [De/Para PREMIT](../depara/premit.md) · [De/Para PREMREC](../depara/premrec.md)
+> **Links rápidos:** [PREMIT](../arquivos/premit.md) · [PREMREC](../arquivos/premrec.md) · [De/Para PREMIT](../mapeamentos/premit.md) · [De/Para PREMREC](../mapeamentos/premrec.md)
 
 ---
 
@@ -11,10 +11,10 @@
 
 - **PREMIT** entra como **registro “pai”** (fotografia da emissão/movimento) e fica **PENDING**.
 - **PREMREC** entra como **filho/parcelas** e é o **motor operacional** que:
-  - Cria/atualiza **Master Policy** e **Certificate Policy** (apólice definitiva no módulo Policy)
-  - Processa **endossos**
-  - Dispara integração **BCP** no **pós-emissão**
-  - Atualiza status para **COMPLETED** quando sucesso
+    - Cria/atualiza **Master Policy** e **Certificate Policy** (apólice definitiva no módulo Policy)
+    - Processa **endossos**
+    - Dispara integração **BCP** no **pós-emissão**
+    - Atualiza status para **COMPLETED** quando sucesso
 
 ---
 
@@ -24,10 +24,10 @@
 - **Service:** `CoinsurancePremitService.groovy`
 - **Entidade:** `CnsPremit`
 - **Campos principais (exemplos):**
-  - `BaseDate`, `MovementType`, `BranchCode`
-  - `PolicyNumber`, `EndorsementNumber`, `ProposalNumber`
-  - datas de vigência
-  - prêmios, comissões etc.
+    - `BaseDate`, `MovementType`, `BranchCode`
+    - `PolicyNumber`, `EndorsementNumber`, `ProposalNumber`
+    - datas de vigência
+    - prêmios, comissões etc.
 
 ### Fluxo real no código
 
@@ -35,10 +35,11 @@
 - Lê `PREMIT.CSV` em `uploaded/`
 
 2) **Validação**
-- Validação de entrada (OPA/Velora) — **fora deste repositório**
+- Validação de entrada (OPA/Velora) — **Valida cada linha do arquivo**
 
 3) **Persistência**
-- `insertPremit()` com `Status = PENDING`
+
+- `Salva cada linha do arquivo na estrutura CoinsurancePremit` com `Status = PENDING`
 
 !!! note "Comportamento importante"
     O **PREMIT não emite apólice sozinho**. Ele funciona como **registro mestre (pai)** para correlacionar e orientar o processamento do **PREMREC**, que é quem efetivamente **cria/atualiza a apólice definitiva** (Master/Certificate).

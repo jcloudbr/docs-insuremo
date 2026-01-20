@@ -1,12 +1,11 @@
-site_name: Template de Documentação
+site_name: Coinsurance Docs
 theme:
   name: material
   language: pt-BR
-
+docs_dir: docs
 nav:
   - Home: index.md
   - Coinsurance:
-      - Visão geral do fluxo: coinsurance/index.md
       - Apólice:
           - Visão geral: coinsurance/apolice/index.md
           - Fluxos:
@@ -18,12 +17,9 @@ nav:
               - PREMREC: coinsurance/apolice/arquivos/premrec.md
               - PREMRECEB: coinsurance/apolice/arquivos/premreceb.md
               - RESPREM: coinsurance/apolice/arquivos/resprem.md
-          - De/Para:
-              - PREMIT: coinsurance/apolice/depara/premit.md
-              - PREMREC: coinsurance/apolice/depara/premrec.md
-              - PREMRECEB: coinsurance/apolice/depara/premreceb.md
-              - RESPREM: coinsurance/apolice/depara/resprem.md
-              - Mapeamentos internos: coinsurance/apolice/depara/mapeamentos-internos.md
+          - Mapeamentos:
+              - Policy (estrutura definitiva): coinsurance/apolice/mapeamentos/policy.md
+              - PREMRECEB — Estruturas e JSONs: coinsurance/apolice/mapeamentos/premreceb-estruturas-json.md
       - Sinistro:
           - Visão geral: coinsurance/sinistro/index.md
           - SINAV: coinsurance/sinistro/sinav.md
@@ -33,7 +29,7 @@ nav:
               - SINAV: coinsurance/sinistro/depara/sinav.md
               - SINPEND: coinsurance/sinistro/depara/sinpend.md
               - SINPAG: coinsurance/sinistro/depara/sinpag.md
-      - Retornos (RO BMG):
+      - Retornos (ROs):
           - Visão geral: coinsurance/retornos/index.md
           - PREMAC: coinsurance/retornos/premac.md
           - PREMRECAC: coinsurance/retornos/premrecac.md
