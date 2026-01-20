@@ -1,27 +1,14 @@
-# Template de Documentação
+# Documentação — Coinsurance (BMG)
 
-Este repositório consolida a documentação funcional e técnica do fluxo **Coinsurance / SUSEP (BMG)**, com foco em:
+Bem-vindo(a) ao repositório de documentação do fluxo de **Coinsurance**.
 
-- **Descrição negocial** do que cada arquivo representa
-- **Fluxo operacional** (ingestão → persistência → processamento → retorno)
-- **Estruturas de dados** e **chaves de correlação**
-- **De/Para** (campo do arquivo físico → como foi salvo/persistido)
+## Onde começar
 
-!!! note "O que NÃO entra aqui"
-    As **policies OPA/Velora** e os validadores ficam em um repositório próprio.
-    Aqui mantemos **a descrição do comportamento de negócio**, as chaves e os mapeamentos.
+- **Coinsurance → Visão geral do fluxo**: visão macro dos arquivos e etapas
+- **Coinsurance → Apólice**: emissão/endosso (PREMIT, PREMREC, PREMRECEB, RESPREM)
+- **Coinsurance → Sinistro**: aviso, pendência e pagamento (SINAV, SINPEND, SINPAG)
 
-## Como navegar
+## Convenções do repositório
 
-- **Design e Arquitetura**: visão do sistema e padrões de documentação.
-- **Coinsurance / SUSEP (BMG)**:
-  - **Apólice**: PREMIT, PREMREC, PREMRECEB, RESPREM
-  - **Sinistro**: SINAV, SINPEND, SINPAG
-  - **Retornos / RO BMG**: arquivos gerados pela BMG (ex.: PREMRECEBC, RESPREMC)
-
-## Execução local (MkDocs)
-
-```bash
-pip install mkdocs-material
-mkdocs serve
-```
+- Este repositório **não inclui** os validadores OPA/Velora (mantidos em outro repo).
+- Sempre que possível, o **De/Para** é gerado a partir do **código-fonte** (services + entities).
