@@ -1,0 +1,72 @@
+site_name: Documentação Técnica - Sistema de Coinsurance BMG
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+nav:
+  - Home: index.md
+
+  - Design e Arquitetura:
+      - Visão Geral do Sistema: arquitetura/visao-geral.md
+      - Desafios e Soluções: arquitetura/desafios-e-solucoes.md
+      - Design de Baixo Nível: arquitetura/low-level.md
+      - Modelo C4: arquitetura/modelo-c4.md
+
+  - Coinsurance / SUSEP (BMG):
+      - Visão geral: coinsurance/index.md
+
+      - Apólice:
+          - Visão geral: coinsurance/apolice/index.md
+          - PREMIT: coinsurance/apolice/premit.md
+          - PREMREC: coinsurance/apolice/premrec.md
+          - PREMRECEB: coinsurance/apolice/premreceb.md
+          - RESPREM: coinsurance/apolice/resprem.md
+
+          - De/Para:
+              - Sumário: coinsurance/apolice/depara/index.md
+              - PREMIT: coinsurance/apolice/depara/premit.md
+              - PREMREC: coinsurance/apolice/depara/premrec.md
+              - PREMRECEB: coinsurance/apolice/depara/premreceb.md
+              - RESPREM: coinsurance/apolice/depara/resprem.md
+
+      - Sinistro:
+          - Visão geral: coinsurance/sinistro/index.md
+          - SINAV: coinsurance/sinistro/sinav.md
+          - SINPEND: coinsurance/sinistro/sinpend.md
+          - SINPAG: coinsurance/sinistro/sinpag.md
+
+          - De/Para:
+              - Sumário: coinsurance/sinistro/depara/index.md
+              - SINAV: coinsurance/sinistro/depara/sinav.md
+              - SINPEND: coinsurance/sinistro/depara/sinpend.md
+              - SINPAG: coinsurance/sinistro/depara/sinpag.md
+
+      - Retornos / RO BMG:
+          - Visão geral: coinsurance/retorno/index.md
+          - PREMRECEBC: coinsurance/retorno/premrecebc.md
+          - RESPREMC: coinsurance/retorno/respremc.md
+
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - codehilite:
+      linenums: true
+  - attr_list
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
