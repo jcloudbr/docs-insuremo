@@ -3,7 +3,7 @@
 > **Escopo:** fluxo de **criação/atualização da Apólice Definitiva no módulo Policy** (**Master Policy + Certificate Policy**), a partir de **PREMIT (pai)** e **PREMREC (parcelas/motor)**.  
 > **Referências de código:** `CoinsurancePremitService.groovy`, `CoinsurancePremRecService.groovy`  
 > **Entidades:** `CnsPremit`, `CnsPremRec`  
-> **Links rápidos:** [PREMIT](../premit.md) · [PREMREC](../premrec.md) · [De/Para PREMIT](../depara/premit.md) · [De/Para PREMREC](../depara/premrec.md)
+> **Links rápidos:** [PREMIT](../arquivos/premit.md) · [PREMREC](../arquivos/premrec.md) · [De/Para PREMIT](../depara/premit.md) · [De/Para PREMREC](../depara/premrec.md)
 
 ---
 
