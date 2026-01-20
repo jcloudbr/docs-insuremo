@@ -1,6 +1,7 @@
 # PREMIT — Descrição negocial (Coinsurance)
 
-> **Definição curta:** **PREMIT** é o **registro mestre do movimento de prêmio** (emissão/endosso/cancelamento) no cosseguro — um **“espelho consolidado”** do evento no nível **apólice/certificado**, com as **chaves** e **totalizadores** que amarram o movimento.
+> **Definição curta:** 
+**PREMIT** é o **registro mestre do movimento de prêmio** (emissão/endosso/cancelamento) no cosseguro — um **“espelho consolidado”** do evento no nível **apólice/certificado**, com as **chaves** e **totalizadores** que amarram o movimento.
 
 ---
 
@@ -13,17 +14,17 @@ Ele descreve **qual movimento ocorreu**, **em que competência** esse movimento 
 O PREMIT traz as chaves que identificam univocamente o movimento:
 
 - **Companhia / origem**
-  - `COD_CIA` (companhia de referência do arquivo)
-  - `DS_ORIGEM` (origem do dado/canal)
+    - `COD_CIA` (companhia de referência do arquivo)
+    - `DS_ORIGEM` (origem do dado/canal)
 
 - **Chaves do contrato**
-  - `COD_RAMO` (ramo SUSEP)
-  - `NUM_APOL` (apólice)
-  - `NUM_END` (endosso)
-  - `NUM_PROP` (proposta)
+    - `COD_RAMO` (ramo SUSEP)
+    - `NUM_APOL` (apólice)
+    - `NUM_END` (endosso)
+    - `NUM_PROP` (proposta)
 
 - **Natureza do evento**
-  - `TIPO_MOV` (emissão/endosso/cancelamento etc.)
+    - `TIPO_MOV` (emissão/endosso/cancelamento etc.)
 
 > **Leitura de negócio:** com esses campos você consegue responder **“o que aconteceu?”** e **“qual contrato foi impactado?”**.
 
@@ -33,15 +34,15 @@ O PREMIT traz as chaves que identificam univocamente o movimento:
 O PREMIT é fortemente “temporal”: ele diz **quando** (competência e vigência) o movimento vale.
 
 - **Competência / base**
-  - `DT_BASE` → “mês base”/competência que organiza fechamento, conciliação e relatórios.
+    - `DT_BASE` → “mês base”/competência que organiza fechamento, conciliação e relatórios.
 
 - **Lifecycle comercial**
-  - `DT_PROP` (data da proposta)
-  - `DT_EMIS` (data de emissão do movimento)
+    - `DT_PROP` (data da proposta)
+    - `DT_EMIS` (data de emissão do movimento)
 
 - **Vigência do risco**
-  - `DT_INI_VIG` (início vigência)
-  - `DT_FIM_VIG` (fim vigência)
+    - `DT_INI_VIG` (início vigência)
+    - `DT_FIM_VIG` (fim vigência)
 
 > **Leitura de negócio:** PREMIT separa bem **competência** (`DT_BASE`) de **vigência de risco** (`DT_INI_VIG/DT_FIM_VIG`).  
 > Isso é importante porque: *o caixa pode acontecer em data diferente da competência, e a competência pode acontecer em data diferente da vigência do risco.*
@@ -52,12 +53,19 @@ O PREMIT é fortemente “temporal”: ele diz **quando** (competência e vigên
 O PREMIT carrega os **valores consolidados** do evento. Ele é a “foto” do movimento na visão macro.
 
 Valores típicos (exemplos do seu OPA/layout):
+
 - `PR_EMIT` → prêmio emitido do movimento
+
 - `PR_COS_CED` → prêmio cedido no cosseguro (parcela cedida)
+
 - `AD_FRAC` → adicional fracionamento
+
 - `CUST_APOL` → custo apólice
+
 - `IOF` → imposto
+
 - `COMIS` / `COMIS_COSS` → comissões
+
 - `PRO_LAB` → pró-labore
 
 > **Leitura de negócio:** são totalizadores usados para:
@@ -71,18 +79,18 @@ Valores típicos (exemplos do seu OPA/layout):
 Além do movimento e valores, o PREMIT ancora **quem é o contrato** e “qual produto”.
 
 - **Segurado**
-  - `CPF_SEG` (CPF/CNPJ do segurado)
-  - `QTD_SEG` (quantidade de segurados quando aplicável)
-  - `QTD_TOM` (indicador de tomador quando aplicável)
+    - `CPF_SEG` (CPF/CNPJ do segurado)
+    - `QTD_SEG` (quantidade de segurados quando aplicável)
+    - `QTD_TOM` (indicador de tomador quando aplicável)
 
 - **Produto e canal (enriquecimento de negócio)**
-  - `DS_GRUPO_RAMO` (grupo de ramo)
-  - `CD_PRODUTO` / `DS_PRODUTO`
-  - `CD_BU` / `DS_BU`
-  - `CD_OPERACAO` / `DCR_TIP_OPER`
-  - `CD_CARTEIRA` / `DS_CARTEIRA`
-  - `CD_SUCURSAL`
-  - `FG_GEB` (flag operacional)
+    - `DS_GRUPO_RAMO` (grupo de ramo)
+    - `CD_PRODUTO` / `DS_PRODUTO`
+    - `CD_BU` / `DS_BU`
+    - `CD_OPERACAO` / `DCR_TIP_OPER`
+    - `CD_CARTEIRA` / `DS_CARTEIRA`
+    - `CD_SUCURSAL`
+    - `FG_GEB` (flag operacional)
 
 > **Leitura de negócio:** esses campos permitem classificação, segmentação e validações de consistência (produto, BU, operação, carteira).
 
