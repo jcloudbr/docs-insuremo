@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../emissao-apolice-master-certificate/">
+        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../../arquivos/">
+        <link rel="next" href="../recebimento-premio-premreceb/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Recebimento do Prêmio (PREMRECEB) - Template de Documentação</title>
+        <title>Emissão da Apólice (Master/Certificate) - Template de Documentação</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recebimento-de-premio-premreceb-coinsurance" class="md-skip">
+        <a href="#emissao-da-apolice-mastercertificate-premit-premrec-coinsurance" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recebimento do Prêmio (PREMRECEB)
+              Emissão da Apólice (Master/Certificate)
             
           </span>
         </div>
@@ -379,29 +379,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../emissao-apolice-master-certificate/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Emissão da Apólice (Master/Certificate)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -419,7 +396,7 @@
   
   
   <span class="md-ellipsis">
-    Recebimento do Prêmio (PREMRECEB)
+    Emissão da Apólice (Master/Certificate)
     
   </span>
   
@@ -432,7 +409,7 @@
   
   
   <span class="md-ellipsis">
-    Recebimento do Prêmio (PREMRECEB)
+    Emissão da Apólice (Master/Certificate)
     
   </span>
   
@@ -464,28 +441,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-que-e-o-premreceb-no-negocio-susep-operacional" class="md-nav__link">
+  <a href="#31-premit-registro-mestre-do-movimento-base-da-emissao" class="md-nav__link">
     <span class="md-ellipsis">
-      O que é o PREMRECEB no negócio (SUSEP / operacional)
+      3.1 PREMIT — Registro mestre do movimento (base da emissão)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="O que é o PREMRECEB no negócio (SUSEP / operacional)">
+    <nav class="md-nav" aria-label="3.1 PREMIT — Registro mestre do movimento (base da emissão)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#o-que-ele-representa" class="md-nav__link">
+  <a href="#codigo-e-entidade" class="md-nav__link">
     <span class="md-ellipsis">
-      O que ele representa
+      Código e entidade
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#para-que-ele-serve" class="md-nav__link">
+  <a href="#fluxo-real-no-codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      Para que ele serve
+      Fluxo real no código
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#papel-negocial-susep-operacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Papel negocial (SUSEP / operacional)
     </span>
   </a>
   
@@ -497,17 +483,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#41-premreceb-recebimento-do-premio-por-parcela" class="md-nav__link">
+  <a href="#32-premrec-motor-de-emissao-mastercertificate-e-endosso" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 PREMRECEB — Recebimento do prêmio (por parcela)
+      3.2 PREMREC — Motor de emissão (Master/Certificate) e endosso
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.1 PREMRECEB — Recebimento do prêmio (por parcela)">
+    <nav class="md-nav" aria-label="3.2 PREMREC — Motor de emissão (Master/Certificate) e endosso">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#codigo-e-entidade" class="md-nav__link">
+  <a href="#codigo-e-entidade_1" class="md-nav__link">
     <span class="md-ellipsis">
       Código e entidade
     </span>
@@ -521,46 +507,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-ingestao-do-premreceb" class="md-nav__link">
+  <a href="#a-ingestao-do-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      A) Ingestão do PREMRECEB
+      A) Ingestão do PREMREC
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A) Ingestão do PREMRECEB">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-processamento-criacaoalteracao-da-apolice-definitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      B) Processamento (criação/alteração da apólice definitiva)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B) Processamento (criação/alteração da apólice definitiva)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-leitura-do-arquivo-s3" class="md-nav__link">
+  <a href="#b1-selecao-do-pai-premit-e-dos-filhos-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Leitura do arquivo (S3)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-mapeamento-csv-entidade-cnspremreceb" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Mapeamento CSV → Entidade (CnsPremReceb)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-validacao-de-entrada" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Validação de entrada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-pos-processamento-do-arquivo-movedelete" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Pós-processamento do arquivo (move/delete)
+      B.1 Seleção do “pai” (PREMIT) e dos “filhos” (PREMREC)
     </span>
   </a>
   
@@ -568,15 +536,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b-processamento-dos-registros-pendentes-materializar-pagamento" class="md-nav__link">
-    <span class="md-ellipsis">
-      B) Processamento dos registros pendentes (materializar pagamento)
-    </span>
-  </a>
   
 </li>
       
@@ -591,36 +550,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-master-policy-precisa-existir" class="md-nav__link">
+  <a href="#1-segurado-party-precisa-existir" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Master Policy precisa existir
+      1) Segurado (Party) precisa existir
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-certificate-policy-emitida-precisa-existir" class="md-nav__link">
+  <a href="#2-produto-precisa-existir-na-rate-table" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Certificate Policy emitida precisa existir
+      2) Produto precisa existir na rate table
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-carrega-a-primeira-certificate-para-obter-policyno" class="md-nav__link">
+  <a href="#3-master-policy-apolice-master-pre-condicao-para-o-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Carrega a primeira Certificate (para obter PolicyNo)
+      3) Master Policy (apólice master) — pré-condição para o Certificate
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-endorsement-para-obter-endono" class="md-nav__link">
+  <a href="#4-certificate-policy-certificado-apolice-definitiva-emitida-para-o-segurado" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Endorsement (para obter EndoNo)
+      4) Certificate Policy (certificado) — apólice definitiva emitida para o segurado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-endosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Endosso
     </span>
   </a>
   
@@ -632,26 +600,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integracao-com-bcp-registro-do-pagamento" class="md-nav__link">
+  <a href="#integracao-com-bcp-pos-emissao" class="md-nav__link">
     <span class="md-ellipsis">
-      Integração com BCP (registro do pagamento)
+      Integração com BCP (pós-emissão)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Integração com BCP (registro do pagamento)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#como-o-premreceb-vira-payment-no-bcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Como o PREMRECEB vira Payment no BCP
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -689,46 +642,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#depara-csv-arquivo-fisico-entidade-cnspremreceb" class="md-nav__link">
+  <a href="#tabelas-de-decisao-resumo-do-motor-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      De/Para — CSV (arquivo físico) → Entidade (CnsPremReceb)
+      Tabelas de decisão (resumo do motor PREMREC)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depara-defaults-e-rastreabilidade-como-o-registro-e-carimbado" class="md-nav__link">
-    <span class="md-ellipsis">
-      De/Para — Defaults e rastreabilidade (como o registro é “carimbado”)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depara-entidade-bcp-payment-como-o-recebido-e-operacionalizado" class="md-nav__link">
-    <span class="md-ellipsis">
-      De/Para — Entidade → BCP Payment (como o “recebido” é operacionalizado)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tabelas-de-decisao-resumo-do-motor-premreceb" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tabelas de decisão (resumo do motor PREMRECEB)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tabelas de decisão (resumo do motor PREMRECEB)">
+    <nav class="md-nav" aria-label="Tabelas de decisão (resumo do motor PREMREC)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-pre-condicoes-para-registrar-pagamento" class="md-nav__link">
+  <a href="#a-emissao-master-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      A) Pré-condições para registrar pagamento
+      A) Emissão / Master / Certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-endosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      B) Endosso
     </span>
   </a>
   
@@ -739,19 +674,33 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#pontos-pendentesincompletos-no-codigo-impacto-direto-no-negocio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pontos pendentes/incompletos no código (impacto direto no negócio)
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recebimento-premio-premreceb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recebimento do Prêmio (PREMRECEB)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1598,28 +1547,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-que-e-o-premreceb-no-negocio-susep-operacional" class="md-nav__link">
+  <a href="#31-premit-registro-mestre-do-movimento-base-da-emissao" class="md-nav__link">
     <span class="md-ellipsis">
-      O que é o PREMRECEB no negócio (SUSEP / operacional)
+      3.1 PREMIT — Registro mestre do movimento (base da emissão)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="O que é o PREMRECEB no negócio (SUSEP / operacional)">
+    <nav class="md-nav" aria-label="3.1 PREMIT — Registro mestre do movimento (base da emissão)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#o-que-ele-representa" class="md-nav__link">
+  <a href="#codigo-e-entidade" class="md-nav__link">
     <span class="md-ellipsis">
-      O que ele representa
+      Código e entidade
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#para-que-ele-serve" class="md-nav__link">
+  <a href="#fluxo-real-no-codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      Para que ele serve
+      Fluxo real no código
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#papel-negocial-susep-operacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Papel negocial (SUSEP / operacional)
     </span>
   </a>
   
@@ -1631,17 +1589,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#41-premreceb-recebimento-do-premio-por-parcela" class="md-nav__link">
+  <a href="#32-premrec-motor-de-emissao-mastercertificate-e-endosso" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 PREMRECEB — Recebimento do prêmio (por parcela)
+      3.2 PREMREC — Motor de emissão (Master/Certificate) e endosso
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.1 PREMRECEB — Recebimento do prêmio (por parcela)">
+    <nav class="md-nav" aria-label="3.2 PREMREC — Motor de emissão (Master/Certificate) e endosso">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#codigo-e-entidade" class="md-nav__link">
+  <a href="#codigo-e-entidade_1" class="md-nav__link">
     <span class="md-ellipsis">
       Código e entidade
     </span>
@@ -1655,46 +1613,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-ingestao-do-premreceb" class="md-nav__link">
+  <a href="#a-ingestao-do-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      A) Ingestão do PREMRECEB
+      A) Ingestão do PREMREC
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A) Ingestão do PREMRECEB">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-processamento-criacaoalteracao-da-apolice-definitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      B) Processamento (criação/alteração da apólice definitiva)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B) Processamento (criação/alteração da apólice definitiva)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-leitura-do-arquivo-s3" class="md-nav__link">
+  <a href="#b1-selecao-do-pai-premit-e-dos-filhos-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Leitura do arquivo (S3)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-mapeamento-csv-entidade-cnspremreceb" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Mapeamento CSV → Entidade (CnsPremReceb)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-validacao-de-entrada" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Validação de entrada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-pos-processamento-do-arquivo-movedelete" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Pós-processamento do arquivo (move/delete)
+      B.1 Seleção do “pai” (PREMIT) e dos “filhos” (PREMREC)
     </span>
   </a>
   
@@ -1702,15 +1642,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b-processamento-dos-registros-pendentes-materializar-pagamento" class="md-nav__link">
-    <span class="md-ellipsis">
-      B) Processamento dos registros pendentes (materializar pagamento)
-    </span>
-  </a>
   
 </li>
       
@@ -1725,36 +1656,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-master-policy-precisa-existir" class="md-nav__link">
+  <a href="#1-segurado-party-precisa-existir" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Master Policy precisa existir
+      1) Segurado (Party) precisa existir
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-certificate-policy-emitida-precisa-existir" class="md-nav__link">
+  <a href="#2-produto-precisa-existir-na-rate-table" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Certificate Policy emitida precisa existir
+      2) Produto precisa existir na rate table
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-carrega-a-primeira-certificate-para-obter-policyno" class="md-nav__link">
+  <a href="#3-master-policy-apolice-master-pre-condicao-para-o-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Carrega a primeira Certificate (para obter PolicyNo)
+      3) Master Policy (apólice master) — pré-condição para o Certificate
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-endorsement-para-obter-endono" class="md-nav__link">
+  <a href="#4-certificate-policy-certificado-apolice-definitiva-emitida-para-o-segurado" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Endorsement (para obter EndoNo)
+      4) Certificate Policy (certificado) — apólice definitiva emitida para o segurado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-endosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Endosso
     </span>
   </a>
   
@@ -1766,26 +1706,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integracao-com-bcp-registro-do-pagamento" class="md-nav__link">
+  <a href="#integracao-com-bcp-pos-emissao" class="md-nav__link">
     <span class="md-ellipsis">
-      Integração com BCP (registro do pagamento)
+      Integração com BCP (pós-emissão)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Integração com BCP (registro do pagamento)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#como-o-premreceb-vira-payment-no-bcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Como o PREMRECEB vira Payment no BCP
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1823,46 +1748,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#depara-csv-arquivo-fisico-entidade-cnspremreceb" class="md-nav__link">
+  <a href="#tabelas-de-decisao-resumo-do-motor-premrec" class="md-nav__link">
     <span class="md-ellipsis">
-      De/Para — CSV (arquivo físico) → Entidade (CnsPremReceb)
+      Tabelas de decisão (resumo do motor PREMREC)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depara-defaults-e-rastreabilidade-como-o-registro-e-carimbado" class="md-nav__link">
-    <span class="md-ellipsis">
-      De/Para — Defaults e rastreabilidade (como o registro é “carimbado”)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#depara-entidade-bcp-payment-como-o-recebido-e-operacionalizado" class="md-nav__link">
-    <span class="md-ellipsis">
-      De/Para — Entidade → BCP Payment (como o “recebido” é operacionalizado)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tabelas-de-decisao-resumo-do-motor-premreceb" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tabelas de decisão (resumo do motor PREMRECEB)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tabelas de decisão (resumo do motor PREMRECEB)">
+    <nav class="md-nav" aria-label="Tabelas de decisão (resumo do motor PREMREC)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-pre-condicoes-para-registrar-pagamento" class="md-nav__link">
+  <a href="#a-emissao-master-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      A) Pré-condições para registrar pagamento
+      A) Emissão / Master / Certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-endosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      B) Endosso
     </span>
   </a>
   
@@ -1870,15 +1777,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pontos-pendentesincompletos-no-codigo-impacto-direto-no-negocio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pontos pendentes/incompletos no código (impacto direto no negócio)
-    </span>
-  </a>
   
 </li>
       
@@ -1898,441 +1796,261 @@
 
 
 
-<h1 id="recebimento-de-premio-premreceb-coinsurance">Recebimento de Prêmio — PREMRECEB (Coinsurance)<a class="headerlink" href="#recebimento-de-premio-premreceb-coinsurance" title="Permanent link">&para;</a></h1>
+<h1 id="emissao-da-apolice-mastercertificate-premit-premrec-coinsurance">Emissão da Apólice (Master/Certificate) — PREMIT + PREMREC (Coinsurance)<a class="headerlink" href="#emissao-da-apolice-mastercertificate-premit-premrec-coinsurance" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Escopo:</strong> registrar o <strong>prêmio recebido</strong> (por parcela) e <strong>materializar o recebimento no BCP</strong> como <strong>Payment (boleto pago)</strong>, amarrado à apólice <strong>Certificate</strong> (e ao <strong>Endorsement</strong>, quando aplicável).<br />
-<strong>Referências de código:</strong> <code>CoinsurancePremRecebService</code><br />
-<strong>Entidades:</strong> <code>CnsPremReceb</code> (ingestão) + integração BCP (<code>Payment</code>, <code>PaymentDetail</code>)</p>
+<p><strong>Escopo:</strong> fluxo de <strong>criação/atualização da Apólice Definitiva no módulo Policy</strong> (<strong>Master Policy + Certificate Policy</strong>), a partir de <strong>PREMIT (pai)</strong> e <strong>PREMREC (parcelas/motor)</strong>.<br />
+<strong>Referências de código:</strong> <code>CoinsurancePremitService.groovy</code>, <code>CoinsurancePremRecService.groovy</code><br />
+<strong>Entidades:</strong> <code>CnsPremit</code>, <code>CnsPremRec</code><br />
+<strong>Links rápidos:</strong> <a href="../../arquivos/premit/">PREMIT</a> · <a href="../../arquivos/premrec/">PREMREC</a> · <a href="../../depara/premit/">De/Para PREMIT</a> · <a href="../../depara/premrec/">De/Para PREMREC</a></p>
 </blockquote>
 <hr />
 <h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>PREMRECEB</strong> representa, no negócio, o <strong>evento de recebimento</strong> do prêmio (normalmente por boleto) — isto é: <strong>pagou</strong>.</li>
-<li>No fluxo interno, ele funciona como “ponte” entre:</li>
-<li><strong>o mundo SUSEP/arquivo</strong> (parcela recebida + dados bancários + valores)</li>
-<li>e <strong>o mundo operacional</strong> (registrar no <strong>BCP</strong> como <code>Payment</code> com status <strong>Paid</strong>).</li>
-<li>Diferente do PREMREC (parcelamento/cronograma), o PREMRECEB é o <strong>realizado</strong>: comprovação/registro de recebimento.</li>
+<li><strong>PREMIT</strong> entra como <strong>registro “pai”</strong> (fotografia da emissão/movimento) e fica <strong>PENDING</strong>.</li>
+<li><strong>PREMREC</strong> entra como <strong>filho/parcelas</strong> e é o <strong>motor operacional</strong> que:</li>
+<li>Cria/atualiza <strong>Master Policy</strong> e <strong>Certificate Policy</strong> (apólice definitiva no módulo Policy)</li>
+<li>Processa <strong>endossos</strong></li>
+<li>Dispara integração <strong>BCP</strong> no <strong>pós-emissão</strong></li>
+<li>Atualiza status para <strong>COMPLETED</strong> quando sucesso</li>
 </ul>
 <hr />
-<h2 id="o-que-e-o-premreceb-no-negocio-susep-operacional">O que é o PREMRECEB no negócio (SUSEP / operacional)<a class="headerlink" href="#o-que-e-o-premreceb-no-negocio-susep-operacional" title="Permanent link">&para;</a></h2>
-<h3 id="o-que-ele-representa">O que ele representa<a class="headerlink" href="#o-que-ele-representa" title="Permanent link">&para;</a></h3>
-<p>Um registro de <strong>prêmio efetivamente recebido</strong>, por parcela, contendo:
-- a <strong>chave de negócio</strong> (ramo, apólice, endosso, proposta, movimento)
-- dados de <strong>parcela</strong> (número, vencimento, data de recebimento)
-- dados de <strong>cobrança</strong> (boleto, nosso número, documento, agência, banco)
-- valores do título (valor do documento, desconto, multa, valor cobrado)</p>
-<h3 id="para-que-ele-serve">Para que ele serve<a class="headerlink" href="#para-que-ele-serve" title="Permanent link">&para;</a></h3>
-<p>Negocialmente, serve para:
-- <strong>dar baixa financeira</strong> (parcela paga)
-- permitir <strong>conciliação</strong> entre:
-  - <strong>emitido/parcelado</strong> (PREMREC)
-  - <strong>recebido</strong> (PREMRECEB)
-- acionar a camada operacional (no seu caso, <strong>BCP</strong>) para registrar o pagamento como <strong>Payment Paid</strong>.</p>
-<hr />
-<h2 id="41-premreceb-recebimento-do-premio-por-parcela">4.1 PREMRECEB — Recebimento do prêmio (por parcela)<a class="headerlink" href="#41-premreceb-recebimento-do-premio-por-parcela" title="Permanent link">&para;</a></h2>
+<h2 id="31-premit-registro-mestre-do-movimento-base-da-emissao">3.1 PREMIT — Registro mestre do movimento (base da emissão)<a class="headerlink" href="#31-premit-registro-mestre-do-movimento-base-da-emissao" title="Permanent link">&para;</a></h2>
 <h3 id="codigo-e-entidade">Código e entidade<a class="headerlink" href="#codigo-e-entidade" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Service:</strong> <code>CoinsurancePremRecebService</code></li>
-<li><strong>Entidade:</strong> <code>CnsPremReceb</code></li>
+<li><strong>Service:</strong> <code>CoinsurancePremitService.groovy</code></li>
+<li><strong>Entidade:</strong> <code>CnsPremit</code></li>
+<li><strong>Campos principais (exemplos):</strong></li>
+<li><code>BaseDate</code>, <code>MovementType</code>, <code>BranchCode</code></li>
+<li><code>PolicyNumber</code>, <code>EndorsementNumber</code>, <code>ProposalNumber</code></li>
+<li>datas de vigência</li>
+<li>prêmios, comissões etc.</li>
 </ul>
+<h3 id="fluxo-real-no-codigo">Fluxo real no código<a class="headerlink" href="#fluxo-real-no-codigo" title="Permanent link">&para;</a></h3>
+<p>1) <strong>Ingestão do arquivo</strong>
+- Lê <code>PREMIT.CSV</code> em <code>uploaded/</code></p>
+<p>2) <strong>Validação</strong>
+- Validação de entrada (OPA/Velora) — <strong>fora deste repositório</strong></p>
+<p>3) <strong>Persistência</strong>
+- <code>insertPremit()</code> com <code>Status = PENDING</code></p>
 <div class="admonition note">
-<p class="admonition-title">Validação de entrada (OPA/Velora)</p>
-<p>O service chama <code>veloraService.validate("bmg_prereceb", mapData)</code>.
-As <strong>policies OPA/Velora</strong> ficam <strong>fora deste repositório</strong>.</p>
+<p class="admonition-title">Comportamento importante</p>
+<p>O <strong>PREMIT não emite apólice sozinho</strong>. Ele funciona como <strong>registro mestre (pai)</strong> para correlacionar e orientar o processamento do <strong>PREMREC</strong>, que é quem efetivamente <strong>cria/atualiza a apólice definitiva</strong> (Master/Certificate).</p>
 </div>
+<h3 id="papel-negocial-susep-operacional">Papel negocial (SUSEP / operacional)<a class="headerlink" href="#papel-negocial-susep-operacional" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PREMIT</strong> representa a “fotografia” do <strong>movimento macro</strong> (emissão/endosso) com totalizadores e vigência.</li>
+<li>No fluxo interno, é a <strong>referência pai</strong> para o processamento de emissão/endosso no módulo Policy via <strong>PREMREC</strong>.</li>
+</ul>
 <hr />
-<h2 id="a-ingestao-do-premreceb">A) Ingestão do PREMRECEB<a class="headerlink" href="#a-ingestao-do-premreceb" title="Permanent link">&para;</a></h2>
-<h3 id="1-leitura-do-arquivo-s3">1) Leitura do arquivo (S3)<a class="headerlink" href="#1-leitura-do-arquivo-s3" title="Permanent link">&para;</a></h3>
-<p>O service lista arquivos pendentes via:
-- <code>s3FileService.listPendingProcessFiles(s3FileService.PREMRECEB)</code></p>
-<p>Para cada arquivo:
-- lê o conteúdo (<code>getResponseBundleFromKey</code>)
-- transforma em bytes UTF-8
-- faz parse CSV com delimitador <code>|</code>:
-  - <code>csvReader.readFile("|", bytes)</code></p>
-<h3 id="2-mapeamento-csv-entidade-cnspremreceb">2) Mapeamento CSV → Entidade (<code>CnsPremReceb</code>)<a class="headerlink" href="#2-mapeamento-csv-entidade-cnspremreceb" title="Permanent link">&para;</a></h3>
-<p>O mapeamento é feito por <code>mapper</code> no código (tabela completa em <strong>De/Para</strong>).</p>
-<p>Além disso, o código:
-- carrega <code>declaredFields</code> da entidade para cast tipado (<code>castValue(...)</code>)
-- injeta defaults (Status, FileId, FileName)</p>
-<h3 id="3-validacao-de-entrada">3) Validação de entrada<a class="headerlink" href="#3-validacao-de-entrada" title="Permanent link">&para;</a></h3>
-<p>Para cada linha do arquivo (<code>mapData</code>):
-- <code>veloraService.validate("bmg_prereceb", mapData)</code>
-- <strong>Se válido:</strong> <code>coinsuranceRepository.insertPremReceb(entity)</code>
-- <strong>Se inválido:</strong> <code>processAsError(...)</code> (gera <code>CnsError</code>)</p>
-<h3 id="4-pos-processamento-do-arquivo-movedelete">4) Pós-processamento do arquivo (move/delete)<a class="headerlink" href="#4-pos-processamento-do-arquivo-movedelete" title="Permanent link">&para;</a></h3>
-<p>Depois de processar o arquivo:
-- move para:
-  - <code>processed/</code> se <strong>não houve erro</strong>
-  - <code>error/</code> se <strong>houve erro</strong>
-- e apaga o original (<code>deleteFile(key)</code>)</p>
-<div class="admonition warning">
-<p class="admonition-title">Risco operacional (marcação de erro do arquivo)</p>
-<p>No código atual, a variável <code>hasError</code> depende do resultado de validação ao longo do loop.
-Se houver mistura de linhas válidas e inválidas, a decisão de mover o arquivo inteiro para <code>processed/</code> ou <code>error/</code> pode ficar <strong>inconsistente</strong>.</p>
-</div>
+<h2 id="32-premrec-motor-de-emissao-mastercertificate-e-endosso">3.2 PREMREC — Motor de emissão (Master/Certificate) e endosso<a class="headerlink" href="#32-premrec-motor-de-emissao-mastercertificate-e-endosso" title="Permanent link">&para;</a></h2>
+<h3 id="codigo-e-entidade_1">Código e entidade<a class="headerlink" href="#codigo-e-entidade_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Service:</strong> <code>CoinsurancePremRecService.groovy</code></li>
+<li><strong>Entidade:</strong> <code>CnsPremRec</code> (parcelas)</li>
+<li><strong>Campos principais (exemplos):</strong></li>
+<li><code>InstallmentNumber</code>, <code>InstallmentQuantity</code></li>
+<li>datas e valores por parcela</li>
+</ul>
 <hr />
-<h2 id="b-processamento-dos-registros-pendentes-materializar-pagamento">B) Processamento dos registros pendentes (materializar pagamento)<a class="headerlink" href="#b-processamento-dos-registros-pendentes-materializar-pagamento" title="Permanent link">&para;</a></h2>
-<p>Após a ingestão, o service processa registros <code>PENDING</code> a partir do índice:
-- <code>coinsuranceRepository.searchByModuleAndStatusFromIndex(CnsPremRecebEntity, PENDING)</code>
-- para cada registro: <code>processEntity(entity)</code></p>
-<p>O objetivo dessa etapa é:</p>
-<p>1) localizar a <strong>apólice definitiva</strong> (Master/Certificate) no módulo Policy</p>
-<p>2) localizar <strong>endosso</strong> (quando aplicável)</p>
-<p>3) registrar o recebimento no <strong>BCP</strong> como <strong>Payment Paid</strong></p>
+<h2 id="a-ingestao-do-premrec">A) Ingestão do PREMREC<a class="headerlink" href="#a-ingestao-do-premrec" title="Permanent link">&para;</a></h2>
+<p>1) <strong>Leitura</strong>
+- Lê <code>PREMREC.CSV</code></p>
+<p>2) <strong>Validação</strong>
+- Validação de entrada (OPA/Velora) — <strong>fora deste repositório</strong></p>
+<p>3) <strong>Persistência</strong>
+- Persiste <code>CnsPremRec</code> com <code>Status = PENDING</code></p>
+<hr />
+<h2 id="b-processamento-criacaoalteracao-da-apolice-definitiva">B) Processamento (criação/alteração da apólice definitiva)<a class="headerlink" href="#b-processamento-criacaoalteracao-da-apolice-definitiva" title="Permanent link">&para;</a></h2>
+<h3 id="b1-selecao-do-pai-premit-e-dos-filhos-premrec">B.1 Seleção do “pai” (PREMIT) e dos “filhos” (PREMREC)<a class="headerlink" href="#b1-selecao-do-pai-premit-e-dos-filhos-premrec" title="Permanent link">&para;</a></h3>
+<p>O service busca <strong>PREMIT pendentes</strong> e, para cada pai, busca os <strong>PREMREC pendentes</strong> correspondentes usando a chave:</p>
+<ul>
+<li><strong>Chave de correlação (no próprio código):</strong></li>
+<li><code>MovementType + PolicyNumber + EndorsementNumber + ProposalNumber + Status = PENDING</code></li>
+</ul>
 <hr />
 <h2 id="validacoes-e-decisoes-como-o-codigo-decide">Validações e decisões (como o código decide)<a class="headerlink" href="#validacoes-e-decisoes-como-o-codigo-decide" title="Permanent link">&para;</a></h2>
-<h3 id="1-master-policy-precisa-existir">1) Master Policy precisa existir<a class="headerlink" href="#1-master-policy-precisa-existir" title="Permanent link">&para;</a></h3>
-<p>O código tenta localizar a master:
-- <code>fetchMasterPolicy(entity.PolicyNumber)</code></p>
-<p><strong>Se não existir:</strong>
-- erro: “Não existe uma Master Policy para a apólice …”
-- <code>processAsError(entity, ERROR, ...)</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Ponto crítico do código (TODO/hardcode)</p>
-<p>No código atual, <code>fetchMasterPolicy(...)</code> está com <strong>TODO</strong> e usa <code>LeaderPolicyNo</code> hardcoded, em vez de usar plenamente o <code>entity.PolicyNumber</code>.</p>
-</div>
-<h3 id="2-certificate-policy-emitida-precisa-existir">2) Certificate Policy emitida precisa existir<a class="headerlink" href="#2-certificate-policy-emitida-precisa-existir" title="Permanent link">&para;</a></h3>
-<p>O código valida se existe certificate emitida (no contexto da master):
-- <code>existPolicyIssued(masterPolicy, entity)</code></p>
-<p><strong>Se não existir:</strong>
-- erro: “Não existe uma apólice criada para o ramo…, apólice…, proposta…”
-- <code>processAsError(entity, ERROR, ...)</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Ponto crítico do código (TODO/hardcode)</p>
-<p><code>existPolicyIssued(...)</code> também contém <strong>TODO</strong> e, no estado atual, utiliza valores hardcoded para busca (ex.: ramo e leader policy).</p>
-</div>
-<h3 id="3-carrega-a-primeira-certificate-para-obter-policyno">3) Carrega a primeira Certificate (para obter PolicyNo)<a class="headerlink" href="#3-carrega-a-primeira-certificate-para-obter-policyno" title="Permanent link">&para;</a></h3>
+<h3 id="1-segurado-party-precisa-existir">1) Segurado (Party) precisa existir<a class="headerlink" href="#1-segurado-party-precisa-existir" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>fetchFirstCertificate(masterPolicy, entity)</code></li>
+<li>Antes de emitir, o fluxo <strong>busca party no cadastro por documento</strong> (CPF/CNPJ).</li>
+<li>Se não existir: <strong>falha</strong> (gera erro no fluxo).</li>
 </ul>
-<p>Se não achar:
-- erro de “Não encontrada apólice para o ramo…, apólice…, proposta…”</p>
-<h3 id="4-endorsement-para-obter-endono">4) Endorsement (para obter EndoNo)<a class="headerlink" href="#4-endorsement-para-obter-endono" title="Permanent link">&para;</a></h3>
+<h3 id="2-produto-precisa-existir-na-rate-table">2) Produto precisa existir na rate table<a class="headerlink" href="#2-produto-precisa-existir-na-rate-table" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>fetchFirstEndorsement(certificatePolicy, entity)</code></li>
+<li>Lookup em <code>BMG_PolicyProduct</code> por:</li>
+<li><code>LeaderPolicyNo (PolicyNumber)</code> + <code>CdProduto (ProductCode)</code></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Ponto crítico do código (TODO/hardcode)</p>
-<p><code>fetchFirstEndorsement(...)</code> está com <strong>TODO</strong> e faz buscas com IDs/PolicyNo hardcoded.
-Isso impacta diretamente a capacidade de amarrar o recebimento ao endosso correto.</p>
+<h3 id="3-master-policy-apolice-master-pre-condicao-para-o-certificate">3) Master Policy (apólice master) — pré-condição para o Certificate<a class="headerlink" href="#3-master-policy-apolice-master-pre-condicao-para-o-certificate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>fetchMasterPolicy(leaderPolicyNo)</code> busca <code>Policy</code> no módulo “Policy” por:</li>
+<li><code>LeaderPolicyNo</code></li>
+<li><code>PolicyType = MASTER</code></li>
+<li><code>PolicyStatus = ISSUED</code></li>
+<li><code>FullOrgCode = tenant</code></li>
+<li><strong>Se movimento for de emissão e master não existir:</strong> cria master (issuance)</li>
+</ul>
+<h3 id="4-certificate-policy-certificado-apolice-definitiva-emitida-para-o-segurado">4) Certificate Policy (certificado) — apólice definitiva emitida para o segurado<a class="headerlink" href="#4-certificate-policy-certificado-apolice-definitiva-emitida-para-o-segurado" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Checa se certificado já existe: <code>existPolicyIssued(...)</code></li>
+<li>Se existe: trata como <strong>duplicado</strong></li>
+<li>Se não existe: <strong>cria certificate</strong> e integra BCP</li>
+</ul>
+<h3 id="5-endosso">5) Endosso<a class="headerlink" href="#5-endosso" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para <code>MovementType &gt; 102</code>, usa <code>processEndorsementIssuance(...)</code></li>
+<li>Mapeamento de movimentos (101–108) para <code>endoType</code> via <code>CnsPremRec.getEndoType()</code>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">MovementType (TIPO_MOV)</th>
+<th>Descrição (SUSEP / Layout)</th>
+<th>O que significa na prática</th>
+<th style="text-align: right;">endoType (se aplicável)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">101</td>
+<td>Emissão de Apólice</td>
+<td>Criação da apólice/certificado (emissão inicial)</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td style="text-align: right;">102</td>
+<td>Endosso de cobrança adicional de prêmio</td>
+<td>Endosso que aumenta prêmio (cobrança complementar)</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td style="text-align: right;">103</td>
+<td>Endosso de restituição de prêmio</td>
+<td>Endosso que reduz prêmio e gera restituição</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr>
+<td style="text-align: right;">104</td>
+<td>Cancelamento de Apólice com restituição de prêmio</td>
+<td>Cancela a apólice e devolve prêmio</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr>
+<td style="text-align: right;">105</td>
+<td>Cancelamento de Endosso com restituição de prêmio</td>
+<td>Cancela um endosso e devolve prêmio</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: right;">106</td>
+<td>Cancelamento de Apólice sem restituição de prêmio</td>
+<td>Cancela a apólice sem devolução de prêmio</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: right;">107</td>
+<td>Cancelamento de Endosso sem restituição de prêmio</td>
+<td>Cancela um endosso sem devolução de prêmio</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: right;">108</td>
+<td>Endosso sem movimentação de prêmio</td>
+<td>Endosso que altera condições sem mexer no prêmio</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td style="text-align: right;">109</td>
+<td>Transferência de carteira</td>
+<td>Movimentação para transferência de carteira (quando aplicável no layout)</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota importante (layout x implementação)</p>
+<p>A tabela acima reflete a <strong>leitura negocial</strong> (layout SUSEP).<br />
+O <code>endoType</code> reflete o que o <strong>código implementa</strong> em <code>getEndoType()</code> e pode não cobrir todos os cenários como o layout descreve.</p>
 </div>
 <hr />
-<h2 id="integracao-com-bcp-registro-do-pagamento">Integração com BCP (registro do pagamento)<a class="headerlink" href="#integracao-com-bcp-registro-do-pagamento" title="Permanent link">&para;</a></h2>
-<p>Se passou nas validações, o código monta um <code>Payment</code> e envia para o BCP:
-- <code>paymentApi().newSinglePaymentRequestBuilder().payment(payments).doRequest()</code></p>
-<h3 id="como-o-premreceb-vira-payment-no-bcp">Como o PREMRECEB vira <code>Payment</code> no BCP<a class="headerlink" href="#como-o-premreceb-vira-payment-no-bcp" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>Payment.paymentMethod = "70"</code> → boleto</li>
-<li><code>Payment.paymentStatus = "3"</code> → Paid</li>
-<li><code>Payment.paymentType = "1"</code> → Direct Billing</li>
-<li><code>Payment.currencyCode = "BRL"</code></li>
-<li><code>Payment.policyNo = certificatePolicy.policyNo</code></li>
-<li><code>Payment.endoNo = endo.endoNo</code> (se encontrado)</li>
-</ul>
+<h2 id="integracao-com-bcp-pos-emissao">Integração com BCP (pós-emissão)<a class="headerlink" href="#integracao-com-bcp-pos-emissao" title="Permanent link">&para;</a></h2>
+<p>Após emissão, executa <code>integrateBcpAfterPolicyIssuance(policy)</code>:</p>
+<p>1) Gera taxa/fee: <code>GenerateFeeService</code><br />
+2) Carrega <code>PolicyFeeInfo</code><br />
+3) Monta payload<br />
+4) Envia via <code>DirectPostFeeReceiver</code></p>
 <hr />
 <h2 id="atualizacao-de-status-sucesso-vs-erro">Atualização de status (sucesso vs erro)<a class="headerlink" href="#atualizacao-de-status-sucesso-vs-erro" title="Permanent link">&para;</a></h2>
 <h3 id="sucesso">Sucesso<a class="headerlink" href="#sucesso" title="Permanent link">&para;</a></h3>
 <ul>
-<li>O código retorna <code>processedSuccessfully = true</code>.</li>
-<li><strong>Mas</strong> o registro <code>CnsPremReceb</code> não é marcado como <code>COMPLETED</code> (não há update efetivo persistido nessa etapa).</li>
+<li>Se processou OK:</li>
+<li>Atualiza <strong>PREMREC</strong> e <strong>PREMIT</strong> relacionados para <code>COMPLETED</code></li>
 </ul>
 <h3 id="erro">Erro<a class="headerlink" href="#erro" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>processAsError(...)</code>:</li>
-<li>seta <code>entity.Status = ERROR</code></li>
-<li><strong>não persiste</strong> a mudança (update está comentado): <code>// TODO coinsuranceRepository.updatePremReceb(entity)</code></li>
-<li>grava <code>CnsError</code> (com <code>Status = COMPLETED</code>)</li>
+<li><code>processParentAndChildrenAsError(...)</code> monta erro e grava <code>CnsError</code></li>
+<li><strong>Ponto crítico:</strong> as linhas que atualizariam <strong>PREMREC/PREMIT</strong> para <code>ERROR/DUPLICATED</code> estão <strong>comentadas (TODO)</strong></li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Risco operacional (reprocessamento infinito)</p>
-<p>Como o <code>updatePremReceb(...)</code> está comentado, registros podem permanecer <strong>PENDING</strong> no índice e serem <strong>reprocessados</strong> continuamente, mesmo após erro/sucesso.</p>
+<p class="admonition-title">Risco operacional</p>
+<p>Se o update para <code>ERROR/DUPLICATED</code> está comentado, registros podem ficar <strong>eternamente <code>PENDING</code></strong> e serem <strong>reprocessados</strong> continuamente.</p>
 </div>
 <hr />
-<h2 id="depara-csv-arquivo-fisico-entidade-cnspremreceb">De/Para — CSV (arquivo físico) → Entidade (<code>CnsPremReceb</code>)<a class="headerlink" href="#depara-csv-arquivo-fisico-entidade-cnspremreceb" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><strong>Fonte:</strong> <code>Map&lt;String, String&gt; mapper</code> no <code>CoinsurancePremRecebService</code></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Campo no arquivo (CSV)</th>
-<th>Campo salvo na entidade</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SEQUENCIA</code></td>
-<td><code>RecordNo</code></td>
-</tr>
-<tr>
-<td><code>COD_CIA</code></td>
-<td><code>CompanyCode</code></td>
-</tr>
-<tr>
-<td><code>DT_BASE</code></td>
-<td><code>BaseDate</code></td>
-</tr>
-<tr>
-<td><code>TIPO_MOV</code></td>
-<td><code>MovementType</code></td>
-</tr>
-<tr>
-<td><code>COD_RAMO</code></td>
-<td><code>BranchCode</code></td>
-</tr>
-<tr>
-<td><code>NUM_APOL</code></td>
-<td><code>PolicyNumber</code></td>
-</tr>
-<tr>
-<td><code>NUM_END</code></td>
-<td><code>EndorsementNumber</code></td>
-</tr>
-<tr>
-<td><code>NUM_PROP</code></td>
-<td><code>ProposalNumber</code></td>
-</tr>
-<tr>
-<td><code>DT_PROP</code></td>
-<td><code>ProposalDate</code></td>
-</tr>
-<tr>
-<td><code>PRESTACAO</code></td>
-<td><code>InstallmentNumber</code></td>
-</tr>
-<tr>
-<td><code>DT_REC_PRE</code></td>
-<td><code>InstallmentReceiptDate</code></td>
-</tr>
-<tr>
-<td><code>DT_VEN_PRE</code></td>
-<td><code>InstallmentDueDate</code></td>
-</tr>
-<tr>
-<td><code>NUM_BAN</code></td>
-<td><code>BankNumber</code></td>
-</tr>
-<tr>
-<td><code>CNPJ_BAN</code></td>
-<td><code>BankDocumentId</code></td>
-</tr>
-<tr>
-<td><code>NUM_BOL</code></td>
-<td><code>TicketNumber</code></td>
-</tr>
-<tr>
-<td><code>NUM_DOC</code></td>
-<td><code>DocumentNumber</code></td>
-</tr>
-<tr>
-<td><code>NUM_AGE</code></td>
-<td><code>AgencyNumber</code></td>
-</tr>
-<tr>
-<td><code>NUM_NOS</code></td>
-<td><code>OurNumber</code></td>
-</tr>
-<tr>
-<td><code>VAL_DOC</code></td>
-<td><code>DocumentValue</code></td>
-</tr>
-<tr>
-<td><code>VAL_DESC</code></td>
-<td><code>DiscountValue</code></td>
-</tr>
-<tr>
-<td><code>VAL_MUL</code></td>
-<td><code>FineValue</code></td>
-</tr>
-<tr>
-<td><code>VAL_COB</code></td>
-<td><code>ChargedValue</code></td>
-</tr>
-<tr>
-<td><code>DS_GRUPO_RAMO</code></td>
-<td><code>BranchGroupDescription</code></td>
-</tr>
-<tr>
-<td><code>CD_PRODUTO</code></td>
-<td><code>ProductCode</code></td>
-</tr>
-<tr>
-<td><code>DS_PRODUTO</code></td>
-<td><code>ProductDescription</code></td>
-</tr>
-<tr>
-<td><code>CD_BU</code></td>
-<td><code>BusinessUnitCode</code></td>
-</tr>
-<tr>
-<td><code>DS_BU</code></td>
-<td><code>BusinessUnitDescription</code></td>
-</tr>
-<tr>
-<td><code>CD_OPERACAO</code></td>
-<td><code>OperationCode</code></td>
-</tr>
-<tr>
-<td><code>CD_CARTEIRA</code></td>
-<td><code>WalletCode</code></td>
-</tr>
-<tr>
-<td><code>DS_CARTEIRA</code></td>
-<td><code>WalletDescription</code></td>
-</tr>
-<tr>
-<td><code>CD_SUCURSAL</code></td>
-<td><code>SucursalCode</code></td>
-</tr>
-<tr>
-<td><code>FG_GEB</code></td>
-<td><code>FgGeb</code></td>
-</tr>
-<tr>
-<td><code>DCR_TIP_OPER</code></td>
-<td><code>OperationDescription</code></td>
-</tr>
-<tr>
-<td><code>DS_ORIGEM</code></td>
-<td><code>OriginDescription</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="depara-defaults-e-rastreabilidade-como-o-registro-e-carimbado">De/Para — Defaults e rastreabilidade (como o registro é “carimbado”)<a class="headerlink" href="#depara-defaults-e-rastreabilidade-como-o-registro-e-carimbado" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Campo interno</th>
-<th>Como é preenchido no código</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Status</code></td>
-<td><code>PENDING</code></td>
-</tr>
-<tr>
-<td><code>FileName</code></td>
-<td>nome do arquivo (<code>key.split("/").last()</code>)</td>
-</tr>
-<tr>
-<td><code>FileId</code></td>
-<td><code>"{etagSemAspas}_{RecordNo}"</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="depara-entidade-bcp-payment-como-o-recebido-e-operacionalizado">De/Para — Entidade → BCP Payment (como o “recebido” é operacionalizado)<a class="headerlink" href="#depara-entidade-bcp-payment-como-o-recebido-e-operacionalizado" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Origem</th>
-<th>Campo</th>
-<th>Destino BCP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CnsPremReceb</code></td>
-<td><code>DocumentValue</code></td>
-<td><code>Payment.amount</code> e <code>PaymentDetail.amount</code></td>
-</tr>
-<tr>
-<td><code>CnsPremReceb</code></td>
-<td><code>BankNumber</code></td>
-<td><code>Payment.bankCode</code></td>
-</tr>
-<tr>
-<td><code>CnsPremReceb</code></td>
-<td><code>OurNumber</code></td>
-<td><code>Payment.bankAccountNo</code></td>
-</tr>
-<tr>
-<td><code>CnsPremReceb</code></td>
-<td><code>AgencyNumber</code></td>
-<td><code>Payment.insurerAccountCode</code></td>
-</tr>
-<tr>
-<td><code>CnsPremReceb</code></td>
-<td><code>TicketNumber</code></td>
-<td><code>Payment.paymentNo</code></td>
-</tr>
-<tr>
-<td><code>Certificate Policy</code></td>
-<td><code>policyNo</code></td>
-<td><code>Payment.policyNo</code></td>
-</tr>
-<tr>
-<td><code>Endorsement</code></td>
-<td><code>endoNo</code></td>
-<td><code>Payment.endoNo</code></td>
-</tr>
-<tr>
-<td>Constante</td>
-<td><code>"70"</code></td>
-<td><code>Payment.paymentMethod</code> (boleto)</td>
-</tr>
-<tr>
-<td>Constante</td>
-<td><code>"3"</code></td>
-<td><code>Payment.paymentStatus</code> (Paid)</td>
-</tr>
-<tr>
-<td>Constante</td>
-<td><code>"1"</code></td>
-<td><code>Payment.paymentType</code> (Direct Billing)</td>
-</tr>
-<tr>
-<td>Constante</td>
-<td><code>"BRL"</code></td>
-<td><code>Payment.currencyCode</code> / <code>PaymentDetail.currencyCode</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="tabelas-de-decisao-resumo-do-motor-premreceb">Tabelas de decisão (resumo do motor PREMRECEB)<a class="headerlink" href="#tabelas-de-decisao-resumo-do-motor-premreceb" title="Permanent link">&para;</a></h2>
-<h3 id="a-pre-condicoes-para-registrar-pagamento">A) Pré-condições para registrar pagamento<a class="headerlink" href="#a-pre-condicoes-para-registrar-pagamento" title="Permanent link">&para;</a></h3>
+<h2 id="tabelas-de-decisao-resumo-do-motor-premrec">Tabelas de decisão (resumo do motor PREMREC)<a class="headerlink" href="#tabelas-de-decisao-resumo-do-motor-premrec" title="Permanent link">&para;</a></h2>
+<h3 id="a-emissao-master-certificate">A) Emissão / Master / Certificate<a class="headerlink" href="#a-emissao-master-certificate" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Condição</th>
-<th>Ação</th>
-<th>Resultado</th>
+<th>Ação principal</th>
+<th>Resultado esperado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Master Policy não encontrada</td>
-<td><code>processAsError(ERROR)</code></td>
-<td>Não registra no BCP</td>
+<td>Party não existe</td>
+<td>Bloqueia emissão</td>
+<td>Erro registrado (<code>CnsError</code>)</td>
 </tr>
 <tr>
-<td>Certificate emitida não existe</td>
-<td><code>processAsError(ERROR)</code></td>
-<td>Não registra no BCP</td>
+<td>Produto não existe em rate table</td>
+<td>Bloqueia emissão</td>
+<td>Erro registrado (<code>CnsError</code>)</td>
 </tr>
 <tr>
-<td>Certificate não carregou</td>
-<td><code>processAsError(ERROR)</code></td>
-<td>Não registra no BCP</td>
+<td>Emissão + Master não existe</td>
+<td>Criar Master</td>
+<td><code>Policy (MASTER)</code> emitida</td>
 </tr>
 <tr>
-<td>Tudo OK</td>
-<td>Monta <code>Payment</code> e chama BCP</td>
-<td>Registra <code>Payment</code> como <strong>Paid</strong></td>
+<td>Certificate já existe (ISSUED)</td>
+<td>Tratar como duplicado</td>
+<td>(deveria marcar DUPLICATED, mas pode ficar PENDING)</td>
+</tr>
+<tr>
+<td>Certificate não existe</td>
+<td>Criar Certificate + integrar BCP</td>
+<td>Apólice emitida + fee/pós-issue</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="pontos-pendentesincompletos-no-codigo-impacto-direto-no-negocio">Pontos pendentes/incompletos no código (impacto direto no negócio)<a class="headerlink" href="#pontos-pendentesincompletos-no-codigo-impacto-direto-no-negocio" title="Permanent link">&para;</a></h2>
-<p>1) <strong>Lookup de apólice com valores hardcoded (TODO)</strong>
-- Master/Certificate/Endorsement ainda não usam plenamente a chave do arquivo (<code>BranchCode</code>, <code>PolicyNumber</code>, <code>EndorsementNumber</code>, <code>ProposalNumber</code>).</p>
-<p>2) <strong>Status do registro não é atualizado</strong>
-- <code>updatePremReceb(entity)</code> está comentado, então o registro pode permanecer <code>PENDING</code> e reprocessar indefinidamente.</p>
-<p>3) <strong>Marcação de sucesso do arquivo pode ser inconsistente</strong>
-- A decisão de mover para <code>processed/</code> ou <code>error/</code> pode não refletir corretamente um arquivo com linhas mistas (válidas e inválidas).</p>
+<h3 id="b-endosso">B) Endosso<a class="headerlink" href="#b-endosso" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condição</th>
+<th>Ação principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MovementType &gt; 102</code></td>
+<td><code>processEndorsementIssuance(...)</code></td>
+</tr>
+<tr>
+<td><code>MovementType 101–108</code></td>
+<td><code>getEndoType()</code> define <code>endoType</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
