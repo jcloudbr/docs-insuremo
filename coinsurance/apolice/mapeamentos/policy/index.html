@@ -1,0 +1,2793 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../arquivos/resprem/">
+      
+      
+        <link rel="next" href="../premreceb-estruturas-json/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Policy (estrutura definitiva) - Coinsurance Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mapeamento-arquivos-susep-coinsurance-policy-estrutura-definitiva" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../../.." title="Coinsurance Docs" class="md-header__button md-logo" aria-label="Coinsurance Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coinsurance Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Policy (estrutura definitiva)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Coinsurance Docs" class="md-nav__button md-logo" aria-label="Coinsurance Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Coinsurance Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coinsurance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coinsurance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apólice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apólice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fluxos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fluxos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxos/emissao-apolice-master-certificate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emissão da Apólice (Master/Certificate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxos/recebimento-premio-premreceb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recebimento do Prêmio (PREMRECEB)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquivos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquivos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquivos/premit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquivos/premrec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMREC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquivos/premreceb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMRECEB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquivos/resprem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESPREM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mapeamentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy (estrutura definitiva)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy (estrutura definitiva)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-policy-root-campos-de-cabecalho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Policy (root) — campos de cabeçalho
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Policy (root) — campos de cabeçalho">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datas-principais-do-risco-vigencia-emissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datas “principais” do risco (vigência / emissão)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-coinsuranceinfolist-amarracao-do-cosseguro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) CoInsuranceInfoList — amarração do cosseguro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) CoInsuranceInfoList — amarração do cosseguro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-chaves-do-lider-apoliceendossoproposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Chaves do líder (apólice/endosso/proposta)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-participacao-da-aceita-coseguradora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Participação da aceita (Coseguradora)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-coinsuranceinsurerlist-lista-de-seguradoras-lideraceita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 CoInsuranceInsurerList — lista de seguradoras (líder/aceita)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-policycustomerlist-segurado-tomador-estipulante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) PolicyCustomerList — segurado, tomador, estipulante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-policyloblist-policyrisklist-policycoveragelist-coberturas-e-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) PolicyLobList → PolicyRiskList → PolicyCoverageList (coberturas e valores)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) PolicyLobList → PolicyRiskList → PolicyCoverageList (coberturas e valores)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-identidade-e-ramo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Identidade e ramo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-totalizadoresvalores-lado-lider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Totalizadores/valores (lado líder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-valores-do-cosseguro-lado-aceito-cedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Valores do cosseguro (lado aceito / cedido)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-policypaymentinfolist-installmentlist-parcelas-cobranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) PolicyPaymentInfoList → InstallmentList (parcelas / cobrança)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) PolicyPaymentInfoList → InstallmentList (parcelas / cobrança)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cabecalho-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Cabeçalho de pagamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-parcela-installmentlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Parcela (InstallmentList)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-premreceb-recebimento-do-premio-importante-destino-nao-e-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) PREMRECEB — recebimento do prêmio (importante: destino não é “Policy”)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) PREMRECEB — recebimento do prêmio (importante: destino não é “Policy”)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-voce-deve-documentar-como-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que você deve documentar como destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resprem-competencia-ppng-reserva-de-premio-nao-ganho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) RESPREM — competência / PPNG (reserva de prêmio não ganho)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) RESPREM — competência / PPNG (reserva de prêmio não ganho)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado do código
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-notas-de-consistencia-para-seu-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Notas de consistência para seu repositório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Notas de consistência para seu repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-fonte-do-dado-padrao-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 “Fonte do dado” (padrão recomendado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-campos-gerados-pelo-motor-nao-mapeiam-do-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Campos gerados pelo motor (não mapeiam do arquivo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice-exemplos-de-paths-uteis-no-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apêndice — exemplos de paths úteis no JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../premreceb-estruturas-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMRECEB — Estruturas e JSONs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sinistro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sinistro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/sinav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/sinpend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPEND
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/sinpag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    De/Para
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    De/Para
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/depara/sinav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/depara/sinpend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPEND
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sinistro/depara/sinpag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retornos (ROs)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retornos (ROs)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PREMAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/premac/premac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/premac/premac-especificacao-funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificação funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/premac/premac-especificacao-tecnica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificação técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/premrecac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMRECAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/premrecebc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PREMRECEBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/sinavac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINAVAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/sinpendac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPENDAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../retornos/sinpagac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINPAGAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-policy-root-campos-de-cabecalho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Policy (root) — campos de cabeçalho
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Policy (root) — campos de cabeçalho">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datas-principais-do-risco-vigencia-emissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datas “principais” do risco (vigência / emissão)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-coinsuranceinfolist-amarracao-do-cosseguro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) CoInsuranceInfoList — amarração do cosseguro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) CoInsuranceInfoList — amarração do cosseguro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-chaves-do-lider-apoliceendossoproposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Chaves do líder (apólice/endosso/proposta)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-participacao-da-aceita-coseguradora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Participação da aceita (Coseguradora)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-coinsuranceinsurerlist-lista-de-seguradoras-lideraceita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 CoInsuranceInsurerList — lista de seguradoras (líder/aceita)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-policycustomerlist-segurado-tomador-estipulante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) PolicyCustomerList — segurado, tomador, estipulante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-policyloblist-policyrisklist-policycoveragelist-coberturas-e-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) PolicyLobList → PolicyRiskList → PolicyCoverageList (coberturas e valores)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) PolicyLobList → PolicyRiskList → PolicyCoverageList (coberturas e valores)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-identidade-e-ramo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Identidade e ramo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-totalizadoresvalores-lado-lider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Totalizadores/valores (lado líder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-valores-do-cosseguro-lado-aceito-cedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Valores do cosseguro (lado aceito / cedido)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-policypaymentinfolist-installmentlist-parcelas-cobranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) PolicyPaymentInfoList → InstallmentList (parcelas / cobrança)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) PolicyPaymentInfoList → InstallmentList (parcelas / cobrança)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cabecalho-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Cabeçalho de pagamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-parcela-installmentlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Parcela (InstallmentList)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-premreceb-recebimento-do-premio-importante-destino-nao-e-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) PREMRECEB — recebimento do prêmio (importante: destino não é “Policy”)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) PREMRECEB — recebimento do prêmio (importante: destino não é “Policy”)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-voce-deve-documentar-como-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que você deve documentar como destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resprem-competencia-ppng-reserva-de-premio-nao-ganho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) RESPREM — competência / PPNG (reserva de prêmio não ganho)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) RESPREM — competência / PPNG (reserva de prêmio não ganho)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado do código
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-notas-de-consistencia-para-seu-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Notas de consistência para seu repositório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Notas de consistência para seu repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-fonte-do-dado-padrao-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 “Fonte do dado” (padrão recomendado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-campos-gerados-pelo-motor-nao-mapeiam-do-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Campos gerados pelo motor (não mapeiam do arquivo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice-exemplos-de-paths-uteis-no-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apêndice — exemplos de paths úteis no JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mapeamento-arquivos-susep-coinsurance-policy-estrutura-definitiva">Mapeamento — Arquivos SUSEP (Coinsurance) → Policy (Estrutura Definitiva)<a class="headerlink" href="#mapeamento-arquivos-susep-coinsurance-policy-estrutura-definitiva" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Objetivo:</strong> mapear, de forma operacional, <strong>onde cada campo dos arquivos (PREMIT/PREMREC/PREMRECEB/RESPREM)</strong> aparece na <strong>Policy</strong> (estrutura definitiva) no InsureMO.</p>
+<p><strong>Referências de código (core):</strong></p>
+<ul>
+<li>
+<p><code>CoinsurancePremitService.groovy</code> (ingestão/validação/persistência do PREMIT)</p>
+</li>
+<li>
+<p><code>CoinsurancePremRecService.groovy</code> (motor de emissão/endosso e montagem da Policy)</p>
+</li>
+<li>
+<p><code>CoinsurancePremRecebService.groovy</code> (recebimento do prêmio)</p>
+</li>
+<li>
+<p><code>CoinsuranceResPremService.groovy</code> (reserva/competência – PPNG)</p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="1-policy-root-campos-de-cabecalho">1) Policy (root) — campos de cabeçalho<a class="headerlink" href="#1-policy-root-campos-de-cabecalho" title="Permanent link">&para;</a></h2>
+<p>Esses campos ficam diretamente no objeto <code>Policy</code> (nível raiz) e normalmente vêm do <strong>PREMIT</strong> (e em alguns casos do fluxo de emissão do motor).</p>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado (negócio)</th>
+<th>Onde fica na Policy (JSON path)</th>
+<th>Fonte principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COD_CIA</code></td>
+<td>Código SUSEP da cia (líder no arquivo)</td>
+<td><code>Policy.CodCiaLider</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>NUM_PROC</code></td>
+<td>Número de processo SUSEP</td>
+<td><code>Policy.NumProcLider</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>DT_BASE</code></td>
+<td>Competência/mês base</td>
+<td><code>Policy.DtBase</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>TIPO_MOV</code></td>
+<td>Tipo de movimento SUSEP</td>
+<td><code>Policy.TipoMov</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>UF_DEP</code></td>
+<td>UF de dependência/origem</td>
+<td><code>Policy.UFDep</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>UF_RISCO</code></td>
+<td>UF de risco</td>
+<td><code>Policy.UFRisco</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>DS_GRUPO_RAMO</code></td>
+<td>Identificação do grupo de ramo</td>
+<td><code>Policy.DsGrupoRamo</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CD_PRODUTO</code></td>
+<td>Código do produto</td>
+<td><code>Policy.CdProduto</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DS_PRODUTO</code></td>
+<td>Descrição do produto</td>
+<td><code>Policy.DsProduto</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CD_BU</code></td>
+<td>BU/canal</td>
+<td><code>Policy.CdBu</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DS_BU</code></td>
+<td>Descrição BU/canal</td>
+<td><code>Policy.DsBu</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CD_OPERACAO</code></td>
+<td>Operação</td>
+<td><code>Policy.CdOperacao</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CD_CARTEIRA</code></td>
+<td>Carteira</td>
+<td><code>Policy.CdCarteira</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DS_CARTEIRA</code></td>
+<td>Nome carteira</td>
+<td><code>Policy.DsCarteira</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CD_SUCURSAL</code></td>
+<td>Sucursal</td>
+<td><code>Policy.CdSucursal</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>FG_GEB</code></td>
+<td>Flag GEB</td>
+<td><code>Policy.FgGeb</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DCR_TIP_OPER</code></td>
+<td>Descrição tipo operação</td>
+<td><code>Policy.DcrTipOper</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DS_ORIGEM</code></td>
+<td>Origem/canal</td>
+<td><code>Policy.DsOrigem</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datas-principais-do-risco-vigencia-emissao">Datas “principais” do risco (vigência / emissão)<a class="headerlink" href="#datas-principais-do-risco-vigencia-emissao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DT_INI_VIG</code></td>
+<td>Início de vigência do risco</td>
+<td><code>Policy.EffectiveDate</code></td>
+<td>PREMIT/PREMREC/RESPREM</td>
+</tr>
+<tr>
+<td><code>DT_FIM_VIG</code></td>
+<td>Fim de vigência do risco</td>
+<td><code>Policy.ExpiryDate</code></td>
+<td>PREMIT/PREMREC/RESPREM</td>
+</tr>
+<tr>
+<td><code>DT_EMIS</code> / <code>DT_EMIS_PR</code></td>
+<td>Data de emissão (apólice / parcela)</td>
+<td><code>Policy.IssueDate</code> <em>(quando aplicável)</em></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observação prática: <code>MasterPolicyNo</code>, <code>PolicyNo</code>, <code>PolicyId</code>, <code>MasterPolicyId</code> e afins <strong>não vêm do arquivo</strong> — são gerados pelo motor de emissão (InsureMO) e retornam na Policy.</p>
+</blockquote>
+<hr />
+<h2 id="2-coinsuranceinfolist-amarracao-do-cosseguro">2) CoInsuranceInfoList — amarração do cosseguro<a class="headerlink" href="#2-coinsuranceinfolist-amarracao-do-cosseguro" title="Permanent link">&para;</a></h2>
+<p>A Policy guarda as informações de cosseguro em <code>CoInsuranceInfoList</code>.</p>
+<h3 id="21-chaves-do-lider-apoliceendossoproposta">2.1 Chaves do líder (apólice/endosso/proposta)<a class="headerlink" href="#21-chaves-do-lider-apoliceendossoproposta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NUM_APOL</code></td>
+<td>Apólice no líder</td>
+<td><code>Policy.CoInsuranceInfoList[0].LeaderPolicyNo</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_END</code></td>
+<td>Endosso no líder</td>
+<td><code>Policy.CoInsuranceInfoList[0].LeaderEndorsementNo</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_PROP</code></td>
+<td>Proposta no líder</td>
+<td><code>Policy.CoInsuranceInfoList[0].LeaderProposalNo</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>DT_PROP</code></td>
+<td>Data da proposta</td>
+<td><code>Policy.CoInsuranceInfoList[0].LeaderProposalDate</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-participacao-da-aceita-coseguradora">2.2 Participação da aceita (Coseguradora)<a class="headerlink" href="#22-participacao-da-aceita-coseguradora" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PERC_COSS</code></td>
+<td>Percentual do cosseguro</td>
+<td><code>Policy.CoInsuranceInfoList[0].PercCoss</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>OFER</code></td>
+<td>Oferta/indicador operacional</td>
+<td><code>Policy.CoInsuranceInfoList[0].Ofer</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>COLET</code></td>
+<td>Colet/indicador operacional</td>
+<td><code>Policy.CoInsuranceInfoList[0].Colet</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><em>(fixo no código)</em></td>
+<td>Código do cossegurador líder (referência)</td>
+<td><code>Policy.CoInsuranceInfoList[0].CodCoss</code></td>
+<td>Hardcoded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-coinsuranceinsurerlist-lista-de-seguradoras-lideraceita">2.3 CoInsuranceInsurerList — lista de seguradoras (líder/aceita)<a class="headerlink" href="#23-coinsuranceinsurerlist-lista-de-seguradoras-lideraceita" title="Permanent link">&para;</a></h3>
+<p>No JSON de Policy, os dados SUSEP das seguradoras aparecem dentro de <code>CoInsuranceInsurerList[*]</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Onde fica</th>
+<th>Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COD_CIA</code> / <code>NUM_PROC</code></td>
+<td><code>...CoInsuranceInsurerList[*].CodCia</code> / <code>...NumProc</code></td>
+<td>No fluxo, normalmente alimenta o registro da seguradora <strong>líder</strong>.</td>
+</tr>
+<tr>
+<td><em>(fixo / cadastro)</em></td>
+<td><code>...CoInsuranceInsurerList[*]</code> do cossegurador</td>
+<td>A seguradora aceita costuma ser definida por configuração/cadastro (ex.: <code>03417</code> + processo específico).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-policycustomerlist-segurado-tomador-estipulante">3) PolicyCustomerList — segurado, tomador, estipulante<a class="headerlink" href="#3-policycustomerlist-segurado-tomador-estipulante" title="Permanent link">&para;</a></h2>
+<p>O arquivo ancora principalmente <strong>documentos</strong> (CPF/CNPJ) e alguns indicadores.
+Dados como <strong>nome, endereço, sexo, data de nascimento</strong> geralmente vêm do <strong>cadastro/party</strong> (lookup no fluxo).</p>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CPF_SEG</code></td>
+<td>Documento do segurado (CPF/CNPJ)</td>
+<td><code>Policy.PolicyCustomerList[*].IdNo</code> <em>(para o customer com <code>IsInsured=Y</code>)</em></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>QTD_SEG</code></td>
+<td>Quantidade de segurados (quando aplicável)</td>
+<td><code>Policy.PolicyCustomerList[*].QtdSeg</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>QTD_TOM</code></td>
+<td>Indicador de tomador (quando aplicável)</td>
+<td><code>Policy.PolicyCustomerList[*].QtdTom</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>CPF_ESTIP</code> <em>(se usado)</em></td>
+<td>Documento do estipulante</td>
+<td><code>Policy.PolicyCustomerList[*].IdNo</code> <em>(para o policy holder)</em></td>
+<td>PREMIT</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Nota: no seu OPA do PREMIT, as regras de <code>CPF_ESTIP</code> estão comentadas — então pode ser um campo <strong>opcional</strong> no momento.</p>
+</blockquote>
+<hr />
+<h2 id="4-policyloblist-policyrisklist-policycoveragelist-coberturas-e-valores">4) PolicyLobList → PolicyRiskList → PolicyCoverageList (coberturas e valores)<a class="headerlink" href="#4-policyloblist-policyrisklist-policycoveragelist-coberturas-e-valores" title="Permanent link">&para;</a></h2>
+<p>A estrutura de coberturas (<code>PolicyCoverageList</code>) carrega tanto:</p>
+<ul>
+<li>
+<p><strong>identidade da cobertura</strong> (ramo, sequência)</p>
+</li>
+<li>
+<p><strong>valores financeiros</strong> (prêmio, IOF, comissão, pró-labore, etc.)</p>
+</li>
+</ul>
+<h3 id="41-identidade-e-ramo">4.1 Identidade e ramo<a class="headerlink" href="#41-identidade-e-ramo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SEQUENCIA</code></td>
+<td>Identificador do registro no arquivo</td>
+<td><code>Policy...PolicyCoverageList[*].SequenceNumber</code></td>
+<td>PREMIT/PREMREC/RESPREM</td>
+</tr>
+<tr>
+<td><code>COD_RAMO</code></td>
+<td>Ramo SUSEP</td>
+<td><code>Policy...PolicyCoverageList[*].CodRamo</code></td>
+<td>PREMIT/PREMREC/RESPREM</td>
+</tr>
+<tr>
+<td><code>IS</code></td>
+<td>Importância segurada</td>
+<td><code>Policy...PolicyCoverageList[*].SumInsured</code></td>
+<td>PREMIT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-totalizadoresvalores-lado-lider">4.2 Totalizadores/valores (lado líder)<a class="headerlink" href="#42-totalizadoresvalores-lado-lider" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PR_EMIT</code></td>
+<td>Prêmio emitido do movimento</td>
+<td><code>...PolicyCoverageList[*].OverrideBeforeVatPremium</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>IOF</code></td>
+<td>Imposto</td>
+<td><code>...PolicyCoverageList[*].OverrideVat</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>COMIS</code></td>
+<td>Comissão (líder)</td>
+<td><code>...PolicyCoverageList[*].OverrideCommission</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>AD_FRAC</code></td>
+<td>Adicional fracionamento</td>
+<td><code>...PolicyCoverageList[*].AdFracLider</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>CUST_APOL</code></td>
+<td>Custo de apólice</td>
+<td><code>...PolicyCoverageList[*].CustApol</code></td>
+<td>PREMIT/PREMREC</td>
+</tr>
+<tr>
+<td><code>PRO_LAB</code></td>
+<td>Pró-labore (líder)</td>
+<td><code>...PolicyCoverageList[*].LaborAmountLider</code></td>
+<td>PREMIT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-valores-do-cosseguro-lado-aceito-cedido">4.3 Valores do cosseguro (lado aceito / cedido)<a class="headerlink" href="#43-valores-do-cosseguro-lado-aceito-cedido" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PR_COS_CED</code></td>
+<td>Prêmio cedido no cosseguro</td>
+<td><code>...PolicyCoverageList[*].PrCosCed</code></td>
+<td>PREMIT</td>
+</tr>
+<tr>
+<td><code>COMIS_COSS</code></td>
+<td>Comissão cosseguro</td>
+<td><code>...PolicyCoverageList[*].ComisCoss</code></td>
+<td>PREMIT</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observação: no JSON da Policy aparecem campos como <code>PrCossAc</code>, <code>ComCosAc</code>, <code>Cofee</code>, <code>PrNGanho*</code> etc. Esses tendem a ser preenchidos por cálculos/rotinas de cosseguro (ex.: PREMAC/PREMRECAC/RESPREMC) e/ou regras do motor.</p>
+</blockquote>
+<hr />
+<h2 id="5-policypaymentinfolist-installmentlist-parcelas-cobranca">5) PolicyPaymentInfoList → InstallmentList (parcelas / cobrança)<a class="headerlink" href="#5-policypaymentinfolist-installmentlist-parcelas-cobranca" title="Permanent link">&para;</a></h2>
+<p>Essa parte é predominantemente <strong>PREMREC</strong> (parcelamento, dados bancários e cronograma de parcelas).</p>
+<h3 id="51-cabecalho-de-pagamento">5.1 Cabeçalho de pagamento<a class="headerlink" href="#51-cabecalho-de-pagamento" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo (PREMREC)</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>QTDE_PREST</code></td>
+<td>Qtde total de parcelas</td>
+<td><code>Policy.PolicyPaymentInfoList[0].InstallmentPeriodCount</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_BAN</code></td>
+<td>Banco</td>
+<td><code>Policy.PolicyPaymentInfoList[0].NumBan</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>CNPJ_BAN</code></td>
+<td>CNPJ do banco/beneficiário (layout)</td>
+<td><code>Policy.PolicyPaymentInfoList[0].CNPJBan</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_BOL</code></td>
+<td>Número do boleto</td>
+<td><code>Policy.PolicyPaymentInfoList[0].NumBol</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_DOC</code></td>
+<td>Número do documento</td>
+<td><code>Policy.PolicyPaymentInfoList[0].NumDoc</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_AGE</code></td>
+<td>Agência</td>
+<td><code>Policy.PolicyPaymentInfoList[0].NumAge</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>NUM_NOS</code></td>
+<td>Nosso número</td>
+<td><code>Policy.PolicyPaymentInfoList[0].NumNos</code></td>
+<td>PREMREC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-parcela-installmentlist">5.2 Parcela (InstallmentList)<a class="headerlink" href="#52-parcela-installmentlist" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo (PREMREC)</th>
+<th>Significado</th>
+<th>Onde fica na Policy</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PRESTACAO</code></td>
+<td>Número da parcela</td>
+<td><code>...InstallmentList[*].InstallmentPeriodSeq</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>DT_VENCTO</code> <em>(ou data de parcela no layout)</em></td>
+<td>Vencimento</td>
+<td><code>...InstallmentList[*].InstallmentDate</code></td>
+<td>PREMREC</td>
+</tr>
+<tr>
+<td><code>DT_EMIS_PR</code></td>
+<td>Data emissão da parcela</td>
+<td><code>...InstallmentList[*].DtEmisPre</code></td>
+<td>PREMREC</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Valores como <code>ValDoc</code>, <code>ValDesc</code>, <code>ValMul</code>, <code>ValCob</code> aparecem no JSON e tendem a ser populados pelo fluxo/cálculo de cobrança.</p>
+</blockquote>
+<hr />
+<h2 id="6-premreceb-recebimento-do-premio-importante-destino-nao-e-policy">6) PREMRECEB — recebimento do prêmio (importante: destino não é “Policy”)<a class="headerlink" href="#6-premreceb-recebimento-do-premio-importante-destino-nao-e-policy" title="Permanent link">&para;</a></h2>
+<p>No desenho de negócio, o <strong>PREMRECEB</strong> representa o <strong>realizado/recebido</strong>.</p>
+<h3 id="o-que-voce-deve-documentar-como-destino">O que você deve documentar como destino<a class="headerlink" href="#o-que-voce-deve-documentar-como-destino" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Regra prática (estado atual do código):</strong> o <code>CoinsurancePremRecebService.groovy</code> faz ingestão/validação/persistência e depois tenta encaminhar/registrar a baixa (pagamento) no módulo apropriado.</li>
+<li><strong>Ou seja:</strong> PREMRECEB é <strong>fluxo de recebimento</strong> e <strong>não</strong> um “atualizador direto” da Policy.</li>
+</ul>
+<p>Mesmo assim, os campos do PREMRECEB costumam espelhar chaves do movimento e podem ser usados para:
+- localizar <code>PolicyPaymentInfo/Installment</code> (por chaves e competência)
+- registrar quitação/baixa
+- conciliação com o parcelado (PREMREC)</p>
+<p><strong>Campos típicos a mapear (por chave/consulta):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Campo no arquivo (PREMRECEB)</th>
+<th>Uso no fluxo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COD_CIA</code>, <code>NUM_PROC</code></td>
+<td>Amarra SUSEP/companhia</td>
+<td>Mesma semântica do PREMIT</td>
+</tr>
+<tr>
+<td><code>DT_BASE</code>, <code>TIPO_MOV</code></td>
+<td>Competência e tipo</td>
+<td>Usado para conciliar lote</td>
+</tr>
+<tr>
+<td><code>COD_RAMO</code>, <code>NUM_APOL</code>, <code>NUM_END</code>, <code>NUM_PROP</code></td>
+<td>Chave do contrato/movimento</td>
+<td>Usado para localizar Policy/CoInsuranceInfo</td>
+</tr>
+<tr>
+<td><code>DT_INI_VIG</code>, <code>DT_FIM_VIG</code></td>
+<td>Vigência</td>
+<td>Pode reforçar consistência</td>
+</tr>
+<tr>
+<td><code>VAL_DOC</code> / valores de recebimento</td>
+<td>Baixa/quitado</td>
+<td>Normalmente vai para módulo de pagamentos/baixa</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-resprem-competencia-ppng-reserva-de-premio-nao-ganho">7) RESPREM — competência / PPNG (reserva de prêmio não ganho)<a class="headerlink" href="#7-resprem-competencia-ppng-reserva-de-premio-nao-ganho" title="Permanent link">&para;</a></h2>
+<p>O <strong>RESPREM</strong> se relaciona com vigência + competência e alimenta cálculo/registro de prêmio ganho/não ganho.</p>
+<h3 id="estado-do-codigo">Estado do código<a class="headerlink" href="#estado-do-codigo" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No fluxo atual, o <code>CoinsuranceResPremService.groovy</code> possui partes <strong>pendentes/TODO</strong> (em implementações típicas, ele persiste o arquivo e depois gera registros contábeis/gerenciais).</li>
+<li>Então, o que dá para afirmar com segurança é:</li>
+<li>RESPREM reforça/consome <code>DT_BASE</code>, <code>DT_INI_VIG</code>, <code>DT_FIM_VIG</code>, <code>COD_RAMO</code>, e chaves do contrato.</li>
+<li>O destino pode ser <code>PolicyCoverage.PrNGanho*</code> / campos de “earned/unearned premium”, mas isso depende da implementação completa.</li>
+</ul>
+<p><strong>Campos que aparecem no JSON e costumam ser alvo do RESPREM:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Onde aparece na Policy</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prêmio não ganho (líder)</td>
+<td><code>...PolicyCoverageList[*].PrNGanhoLider</code></td>
+<td>Pode ser calculado a partir de RESPREM</td>
+</tr>
+<tr>
+<td>Prêmio não ganho (cosseguro)</td>
+<td><code>...PolicyCoverageList[*].PrNGanhoCoss</code></td>
+<td>Mesma lógica, lado aceito</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-notas-de-consistencia-para-seu-repositorio">8) Notas de consistência para seu repositório<a class="headerlink" href="#8-notas-de-consistencia-para-seu-repositorio" title="Permanent link">&para;</a></h2>
+<h3 id="81-fonte-do-dado-padrao-recomendado">8.1 “Fonte do dado” (padrão recomendado)<a class="headerlink" href="#81-fonte-do-dado-padrao-recomendado" title="Permanent link">&para;</a></h3>
+<p>Para cada campo, mantenha sempre:
+- <strong>origem</strong>: PREMIT / PREMREC / PREMRECEB / RESPREM
+- <strong>destino</strong>: <code>Policy</code> (path) <strong>ou</strong> “módulo externo” (pagamentos/baixa/contábil)
+- <strong>comentário</strong>: “hardcoded”, “lookup cadastro/party”, “gerado pelo motor”, “TODO no código”</p>
+<h3 id="82-campos-gerados-pelo-motor-nao-mapeiam-do-arquivo">8.2 Campos gerados pelo motor (não mapeiam do arquivo)<a class="headerlink" href="#82-campos-gerados-pelo-motor-nao-mapeiam-do-arquivo" title="Permanent link">&para;</a></h3>
+<p>Alguns exemplos comuns:
+- <code>PolicyId</code>, <code>PolicyNo</code>, <code>MasterPolicyId</code>, <code>MasterPolicyNo</code>
+- <code>OrgCode</code>, <code>PolicyStatus</code>, <code>PolicyType</code>
+- <code>ProductId</code>, <code>TechProductId</code>, <code>BusinessObjectId</code></p>
+<hr />
+<h2 id="apendice-exemplos-de-paths-uteis-no-json">Apêndice — exemplos de paths úteis no JSON<a class="headerlink" href="#apendice-exemplos-de-paths-uteis-no-json" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Policy.EffectiveDate</code>, <code>Policy.ExpiryDate</code>, <code>Policy.IssueDate</code></li>
+<li><code>Policy.CoInsuranceInfoList[0].LeaderPolicyNo</code>, <code>LeaderEndorsementNo</code>, <code>LeaderProposalNo</code></li>
+<li><code>Policy.PolicyCustomerList[*].IdNo</code>, <code>IsInsured</code>, <code>IsPolicyHolder</code></li>
+<li><code>Policy.PolicyLobList[0].PolicyRiskList[0].PolicyCoverageList[*].OverrideBeforeVatPremium</code></li>
+<li><code>Policy.PolicyPaymentInfoList[0].InstallmentList[*].InstallmentDate</code>, <code>InstallmentPeriodSeq</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
