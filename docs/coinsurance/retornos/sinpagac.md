@@ -1,154 +1,98 @@
 # SINPAGAC — Retorno pagamento (BMG)
 
-Documentação Técnica — Fluxo SINPAGAC
+SINPAGAC — Visão geral (Sinistros Pagos BMG)
 
-. SINPAGAC - Sistema de Pagamento de Sinistros
+O que é (negócio)SINPAGAC é o arquivo de retorno que materializa, para fins regulatórios/contábeis, os sinistros pagos/liquidados do cosseguro aceito (BMG = 03417) para um conjunto de sinistros já persistidos na estrutura definitiva (ClaimCase).Como este projeto gera: a exportação consulta o índice de ClaimCase (com status "03" - Pago) e faz JOIN com o índice de Endorsement para montar 1 linha por sinistro liquidado, aplicando regras de mapeamento de campos e validações SUSEP.
+Escopo	
+	
+Aspecto	Descrição
+Arquivo/RO	SINPAGAC
+Área	Retornos (ROs) → Sinistros / Pagamento
+Entrada do motor	ClaimCase index + Endorsement index
+Saída	SINPAGAC_YYYYMM_<timestamp>.csv (delimitador |)
+Regras SUSEP / espec	Usadas como referência de campos obrigatórios e formatos
 
-1 Definição
-Sistema para reportar sinistros PAGOS/LIQUIDADOS à SUSEP.
-1.2 Critérios de Seleção
-CritérioValorCaseStatus"03" (Pago/Settled)Filtro de DataInsertTime no período YYYYMMExemplo QueryInsertTime >= "2026-01-01" AND InsertTime <= "2026-01-31"
-1.3 Layout do Arquivo
-Total de Campos: 14
-Separador: Pipe (|)
-Encoding: UTF-8
-Line Ending: \n
-1.4 Estrutura de Campos
+Gatilho e periodicidadeGatilho:
+Execução do job de export do período (DT_BASE = YYYYMM) no fechamento mensal.Período (DT_BASE):
+Normalmente vem do orquestrador como YYYYMM (ex.: 202601).Filtro por competência (InsertTime):
 
-Campo SINAVAC   Origem  Campo JSON  Fallback    Formato
-vr_mov  índice  SettlementAmount    TotalIncurred, RequestAmount    9999999999.99
-tp_sin  default -   fixo 01 (morte) 2 dígitos
-uf_risco    default -   vazio (não disponível)  2 caracteres
-:
-Campo   Default     Quando Implementar
-TIPO_MOV    01       ClaimCase.TipoMov
-NUM_END 00000000000000000000        ClaimCase.EndorsementNo
-TP_SIN  01       ClaimCase.ClaimType
-UF_RISCO    ``       ClaimCase.RiskState
+Quando habilitado, o período YYYYMM é convertido para range de timestamps:
 
-1.5 Exemplo de Linha
-csv0000000001|03417|202601|03|0993|05908|CBMGV93202600000062|789322900007004000|787722026011602000|16/01/2026|01/01/2026|01/01/2026|5000.00|01
-1.6 Características
+Início: YYYY-MM-01T00:00:00
+Fim: YYYY-MM-DDT23:59:59 (último dia do mês)
 
-VR_MOV: Valor REAL pago (ex: 5000.00)
-Data Base: Período do pagamento (InsertTime)
 
-2. Especificação de Campos
-2.1 Campos Calculados
-2.1.1 SEQUENCIA
-long sequenceCounter = 1L
-String sequence = String.format("%010d", sequenceCounter++)
+Campo filtrado: InsertTime (data/hora em que o pagamento foi registrado no sistema)
+Fonte de dados (estrutura definitiva)1) Índice ClaimCase (Principal)Consulta por lotes com paginação por entity_id (keyset):Filtros:
 
-Contador sequencial
-Zero-padded à esquerda (10 dígitos)
-Reinicia a cada arquivo
+CaseStatus = "03" (Sinistro Pago/Liquidado)
+InsertTime >= "YYYY-MM-01T00:00:00" (início do período)
+InsertTime <= "YYYY-MM-DDT23:59:59" (fim do período)
+Ordenação:
 
-2.1.2 COD_CIA
-final String COD_CIA = "03417"
+entity_id ASC (keyset pagination)
+ resultado do índice entrega
 
-Código da companhia (constante)
+Documento completo do ClaimCase com todos os campos necessários
+PolicyNo (chave para JOIN com Endorsement)
+2) Índice Endorsement (JOIN)Para cada batch de ClaimCases:
 
-2.1.3 DT_BASE
-String dtBase = periodYYYYMM  // Ex: "202601"
+Extrai PolicyNo únicos
+Faz query batch no índice Endorsement
+Cria Map de lookup PolicyNo → Endorsement
 
-Período do arquivo no formato YYYYMM
-Vem do orquestrador
+Filtros:
+PolicyNo IN [lista de PolicyNos únicos
 
-2.1.4 COD_COSS
-final String COD_COSS = "05908"
+Objetivo:
+Obter EndoType (campo crítico para TIPO_MOV)
+Obter campos backup: LeaderPolicyNo, LeaderEndorsementNo, EndoNo
+Campos do SINPAGAC
 
-Código do cosseguro (constante)
 
-2.2 Campos com JOIN (Endorsement)
-2.2.1 TIPO_MOV (Campo 4)
+Identificação		
+			
+#	Campo SUSEP	Origem	Regra/Observação
+1	SEQUENCIA	Contador local	Inicia em 1, zero-padded
+2	COD_CIA	Constante	Sempre 03417
+3	DT_BASE	Parâmetro	YYYYMM do período
+4	TIPO_MOV	Endorsement.EndoType	JOIN obrigatório; default 01 se ausente
+5	COD_RAMO	ClaimCase.ProductCode (derivado)	Mapeamento: BMGAP82→0993, BMGAP83→0118, etc
+6	COD_COSS	Constante	Sempre 05908 (líder)
+7	NUM_SIN	ClaimCase.ClaimNo	Número do sinistro (obrigatório)
+8	NUM_APOL	ClaimCase.ExtPolicyNo / Endorsement.LeaderPolicyNo / ClaimCase.PolicyNo	Prioridade: ExtPolicyNo → LeaderPolicyNo → PolicyNo
+9	NUM_END	ClaimCase.ExtEndoNo / Endorsement.LeaderEndorsementNo / Endorsement.EndoNo	Prioridade: ExtEndoNo → LeaderEndorsementNo → EndoNo → Zeros
+10	DT_REG	ClaimCase.InsertTime	Formato dd/MM/yyyy
+11	DT_AVISO	ClaimCase.NoticeTime	Data FNOL original (dd/MM/yyyy)
+12	DT_OCOR	ClaimCase.AccidentTime	Data ocorrência (dd/MM/yyyy)
+13	VR_MOV	ClaimCase.SettlementAmount	Valor REAL pago (não zero)
+14	TP_SIN	ClaimCase.ExtClaimType	Tipo sinistro: 01=Morte, 02=Invalidez, 03=Incapacidade, 04=Desemprego
+
+
+Mapeamentos específicos
+1. TIPO_MOV (Campo 4)
 Fonte: Endorsement.EndoType
-
-String tipoMovStr = String.format("%02d", tipoMov)
-Valores:
 EndoTypeTIPO_MOVDescrição"1""01"Emissão"2""02"Renovação"3""03"Alteração/Endosso"4""04"CancelamentoAusente"01"Default
 
-2.3 Campos do ClaimCase
-2.3.1 COD_RAMO (Campo 5)
+2. COD_RAMO (Campo 5)
 Fonte: ClaimCase.ProductCode 
+ProductCodeCOD_RAMO Descrição SUSEPBMGAP82*0993Vida em GrupoBMGAP83*0118PrestamistaBMGV93*0993Vida*AP*0161Acidentes PessoaisOutrosPrimeiros 4 dígitosGenérico
 
-2.3.4 NUM_END (Campo 9)
-Prioridades:
+3. NUM_APOL (Campo 8) 
+
+ClaimCase.ExtPolicyNo 
+Endorsement.LeaderPolicyNo 
+ClaimCase.PolicyNo 
+Padding: 20 caracteres 
+
+4. NUM_END (Campo 9) 
 
 ClaimCase.ExtEndoNo 
 Endorsement.LeaderEndorsementNo 
 Endorsement.EndoNo 
 
-DT_REG (Campo 10):
-String insertTime = requireString(claimDoc, "InsertTime")
-String dtReg = toSusepDate(insertTime)
-// "2026-01-16T14:25:28" → "16/01/2026"
-DT_AVISO (Campo 11):
-String noticeTime = requireString(claimDoc, "NoticeTime")
-String dtAviso = toSusepDate(noticeTime)
-// "2026-01-01" → "01/01/2026"
-DT_OCOR (Campo 12):
-String accidentTime = requireString(claimDoc, "AccidentTime")
-String dtOcor = toSusepDate(accidentTime)
-// "2026-01-01" → "01/01/2026"
 
 
-Valores:
-ExtClaimTypeTP_SINDescrição"1""01"Morte"2""02"Invalidez"3""03"Incapacidade Temporária"4""04"Desemprego
 
-2.3.8 UF_RISCO (Campo 15 - SINAVAC apenas)
-Fonte: ClaimCase.RiskState
-String validateUF(String uf) {
-    if (uf == null || uf.isEmpty()) return ""
-    String normalized = uf.toUpperCase().trim()
-    if (!normalized.matches("[A-Z]{2}")) return ""
-    return VALID_UFS.contains(normalized) ? normalized : ""
-}
 
-static final Set<String> VALID_UFS = [
-    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
-    "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-    "RS", "RO", "RR", "SC", "SP", "SE", "TO"
-] as Set
-
-**Formato:** 2 caracteres (sigla UF)
-**Validação:** Contra lista de UFs brasileiras válidas
-
----
-
- 3. Fluxo de Processamento
-
-### 3.1 Visão Geral
-
-│ FASE 1: PROCESSAMENTO SINAVAC                              │          
-            
-│ 1.1 Query ClaimCases (Status "01")                         │          
-│ 1.2 Preload Endorsements (Batch)                           │          
-│ 1.3 Gerar CSV                                               │         
-│ 1.4 Salvar arquivo                                          │         
-            
-                        ↓           
-            
-│ FASE 2: PROCESSAMENTO SINPAGAC                             │          
-            
-│ 2.1 Query ClaimCases (Status "03")                         │          
-│ 2.2 Preload Endorsements (Batch)                           │          
-│ 2.3 Gerar CSV                                               │         
-│ 2.4 Salvar arquivo                                          │         
-            
-                        ↓           
-            
-│ FASE 3: ENVIO                                               │         
-            
-│ 3.1 Upload FTP SUSEP                                        │         
-│ 3.2 Log de auditoria                                        │         
-│ 3.3 Notificação (email/slack)                              │          
-            
-                        ↓           
-            
-│ FIM                                                         │         
-│ Status: Sucesso/Erro                                        │         
-      
-
-14 campo
-VR_MOV com valor real pago
 
